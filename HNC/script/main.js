@@ -1057,6 +1057,11 @@ function UICCposition(){
                 showGrocerySideBar();
                 }
 
+                if(smokeFlag ==1){
+                smokeFlag = 0;
+                showSmokeSideBar();
+                }
+
                 if(uiccpositionFlag==1){
                 	UICCposition();
                 }
@@ -1224,6 +1229,12 @@ function IncomeRemove(){
                 groceryFlag = 0;
                 showGrocerySideBar();
                 }
+
+                if(smokeFlag ==1){
+                smokeFlag = 0;
+                showSmokeSideBar();
+                }
+
                 if(uiccpositionFlag==1){
                 	UICCposition();
                 }
@@ -1435,6 +1446,12 @@ function EducationRemove(){
                 groceryFlag = 0;
                 showGrocerySideBar();
                 }
+
+                if(smokeFlag ==1){
+                smokeFlag = 0;
+                showSmokeSideBar();
+                }
+
                 if(uiccpositionFlag==1){
                 	UICCposition();
                 }
@@ -1594,6 +1611,7 @@ function EduIncomeRemove(){
                         groceryFlag = 0;
                         showGrocerySideBar();
                     }
+
 
 
         }
