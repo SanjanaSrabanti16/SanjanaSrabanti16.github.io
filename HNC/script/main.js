@@ -599,6 +599,11 @@ d3.json("data/mapChicago4.geojson", function(json) {
                 showGrocerySideBar();
             }
 
+            if(smokeFlag==1){
+                smokeFlag = 0;
+                showSmokeSideBar();
+            }
+
             d3.select("#sidebar-right1")
                         .append('svg')
                         .attr("width",$("#sidebar-right1").width())
