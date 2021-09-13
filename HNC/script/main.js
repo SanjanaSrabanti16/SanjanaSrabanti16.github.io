@@ -599,7 +599,7 @@ d3.json("data/mapChicago4.geojson", function(json) {
                 showGrocerySideBar();
             }
 
-            if(smokeFlag==1){
+            if(smokeFlag ==1){
                 smokeFlag = 0;
                 showSmokeSideBar();
             }
@@ -615,8 +615,8 @@ d3.json("data/mapChicago4.geojson", function(json) {
                         .attr('x', 0)
                         .attr('y', "45%")
                         .style("text-anchor", "start")
-                        .attr("font-size",'12spx')
-                        .text('Cancer people');
+                        .attr("font-size","12px")
+                        .text('Number of HNC cases');
 
 
                     var legendCancer = d3.select("#sidebar-right1").
@@ -1021,7 +1021,7 @@ function UICCposition(){
                     .attr('x', 0)
                     .attr('y', "45%")
                     .style("text-anchor", "start")
-                    .attr("font-size",'12spx')
+                    .attr("font-size",'12px')
                     .text('Per capita income');
 
 
@@ -1359,27 +1359,19 @@ function EducationRemove(){
                 var mapwidth1 = $('.map').width();
                 var mapwidth2 = mapwidth1 - ((mapwidth1*36)/100);
 
-                d3.select(".map").append('g')
-                    .attr("width",40)
-                    .attr("height",50)
-                    .attr("class","eduIncome-legend-heading")
-                    .append('text')
-                    .attr("x","23%")
-                    .attr("y","97%")
-                    .attr("font-size",'15px')
-                    .text('Income');
+                // d3.select(".map").append('g')
+                //     .attr("width",40)
+                //     .attr("height",50)
+                //     .attr("class","eduIncome-legend-heading")
+                //     .append('text')
+                //     .attr("x","23%")
+                //     .attr("y","97%")
+                //     .attr("font-size",'10px')
+                //     .text('Income');
 
                  var check = $(".map").height()*0.89;
                  var check1 = $(".map").width()*0.08;
 
-                d3.select(".map").append('g')
-                    .attr("width",40)
-                    .attr("height",50)
-                    .attr("class","eduIncome-legend-heading")
-                    .append('text')
-                    .attr("font-size",'15px')
-                    .attr("transform", "translate(" + check1 + "," + check + ")" + "rotate(-90)")
-                    .text('Education');
 
                 var mapheight1 = $('.map').height();
                 var mapheight2 = mapheight1 - ((mapheight1*26)/100);
@@ -1391,6 +1383,25 @@ function EducationRemove(){
                     .attr("height",h)
                     .attr("class","eduIncome-legend")
                     .attr("transform", "translate(" + width1 + "," + mapheight2 + ")");
+
+                key.append('g')
+                    .attr("width",40)
+                    .attr("height",50)
+                    .attr("class","eduIncome-legend-heading")
+                    .append('text')
+                    .attr("x",40)
+                    .attr("y",150)
+                    .attr("font-size",'12px')
+                    .text('Income');
+
+                key.append('g')
+                    .attr("width",40)
+                    .attr("height",50)
+                    .attr("class","eduIncome-legend-heading")
+                    .append('text')
+                    .attr("font-size",'12px')
+                    .attr("transform", "translate(-60,80)" + "rotate(-90)")
+                    .text('Education');
 
                 for (var i=0;i<3;i++){
                     key.append("g:rect")
@@ -1569,7 +1580,7 @@ function EduIncomeRemove(){
                         .attr('y', "75%")
                         .style("text-anchor", "start")
                         .attr("font-size",'12px')
-                        .text('Tobacco Use');
+                        .text('Tobacco Use (Smokers)');
 
                     var legendSmoke = d3.select("#sidebar-right1")
                                         .append('svg')
@@ -2146,7 +2157,6 @@ function DemoMap(container,zip) {
     var DemoMap = d3.select(container)
         .append("svg")
         .attr("width",$(container).width())
-        .attr("height", 20)
         .attr("height", height1)
         .attr("class", "Demo")
         .append("g")
@@ -2475,7 +2485,7 @@ function DemoAxis(container){
                             .attr("height", $(container).height())
                             .attr("class", "demoAxis")
                             .append("g")
-                            .attr("transform", "translate(" + p + ",0)");
+                            .attr("transform", "translate(" + p + ",15)");
 
         DemoAxis.append("text")
                 .attr("y", "18%")
@@ -2493,7 +2503,7 @@ function DemoAxis(container){
 
         DemoAxis.append("text")
                 .attr("y", "65%")
-                .attr("x", -8)
+                .attr("x", -5)
                 .attr("dy", ".40em")
                 .style("text-anchor", "start")
                 .style("font" ,"12px sans-serif")
@@ -2511,6 +2521,20 @@ function DemoAxis(container){
                                 .attr("class", "y axis")
                                 .call(YAxis);*/
 }
+
+function DemoLegend(){
+    var width = $("#DemoLegend").width();
+    var height = $("#DemoLegend").height();
+
+    console.log(width, height)
+
+
+    var DemoL = d3.select("#DemoLegend")
+                    .append('svg')
+                    .attr("width", width)
+                    .attr("height", height)
+}
+//DemoLegend();
 //DemoAxis("#DemoZipAxis")
 
 //Race distribution chart starts for UIC
@@ -5156,7 +5180,7 @@ function UICScatterPlot(container){
           .call(xAxis)
           .append("text")
           .attr("class", "label")
-          .attr("x", width-300)
+          .attr("x", width-width/3)
           .attr("y", 25)
           .style("text-anchor", "end")
           .text("Age at Diagnosis (years)");
@@ -5391,7 +5415,7 @@ function UICScatterPlot(container){
           .data(Cohort1)
           .attr("x", width - 24)
           .attr("y", 10)
-          .attr("dy", ".30em")
+          .attr("dy", ".20em")
           .style("text-anchor", "end")
           .text(function(d) { return d;})
 
@@ -5414,7 +5438,7 @@ function UICScatterPlot(container){
           .data(Cohort2)
           .attr("x", width - 24)
           .attr("y", 25)
-          .attr("dy", ".30em")
+          .attr("dy", ".20em")
           .style("text-anchor", "end")
           .text(function(d) { return d;})
 
