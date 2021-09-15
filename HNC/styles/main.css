@@ -15,7 +15,7 @@
 
 .grid-item{
     display: grid;
-    grid-template-rows: 10% 30% 30% 5% 25%;
+    grid-template-rows: 10% 30% 30% 4% 2% 24%;
     grid-template-columns: 10% 64% 2% 24%;
     background-color: white;
     height: 100%;
@@ -50,7 +50,7 @@
 
 #DemoZip{
     grid-column: 2/3;
-    grid-row: 5/6;
+    grid-row: 6/7;
 }
 
 #DemoZip1{
@@ -60,12 +60,12 @@
 
 #DemoZipAxis{
     grid-column: 1/2;
-    grid-row: 5/6;
+    grid-row: 5/7;
 }
 
 #DemoLegend{
     grid-column: 4/5;
-    grid-row: 4/6;
+    grid-row: 4/7;
 }
 
 
@@ -572,3 +572,22 @@
   border-width: thin;
 } 
 
+/*@media screen and (max-width: 1200px) {
+  div.LegendMarginText {
+    svg{
+         width: 5px;
+        height: 5px;
+    }
+    font-size: 5px;
+  }
+}
+div.LegendMarginText {
+    svg-container { 
+    display: inline-block;
+    position: relative;
+    width: auto;
+    padding-bottom: 100%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+}
+  }*/

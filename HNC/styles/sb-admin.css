@@ -31,6 +31,7 @@ body {
 
 #wrapper #content-wrapper {
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 100%;
 /*  padding-top: 1rem;
   padding-bottom: 80px;*/
@@ -233,7 +234,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
     width: 10px;
   }
   .sidebar.toggled .nav-item .nav-link span {
-    font-size: 0.65rem;
+    font-size: 0.4vw;
     display: block;
   }
   /*.sidebar.toggled .nav-item .dropdown-menu {

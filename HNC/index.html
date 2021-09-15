@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -69,6 +69,7 @@
 
     <!-- Sidebar -->
         <ul class="sidebar navbar-nav toggled" id="sidebar" >
+        	<span style="font-size: 0.5vw; margin-left: 1em">UIC data</span>
             <li class="nav-item active" style="margin-left: -0.5em">
                 <a class="nav-link" >
                     <!-- <i class="fas fa-graduation-cap"></i> -->
@@ -83,6 +84,7 @@
             </li>
 
             <span style="margin-top:50%;"></span>
+            <span style="font-size: 0.5vw; margin-left: 1em">US Census data</span>
             
             <li class="nav-item active" style="margin-left: -0.5em">
                 <a class="nav-link" >
@@ -114,19 +116,19 @@
 
             <div class="container-fluid" id = "grid-container">
                 <div id = "map-panel" class = "grid-item">
-                   <div id="map-heading"><h6 style="font-size: 16px">Map shows the distribution of the cancer patients treated at University of Illinois Cancer Center</h6>
+                   <div id="map-heading"><h6 style="font-size: 0.8vw;">Map shows the distribution of the cancer patients treated at University of Illinois Cancer Center</h6>
                     <!-- <h6 style="font-size: 14px"><b>+</b> represents the location of UICC</h6> -->
                     <div style="margin-top: 0px; margin-left: 2px">
-                        <button class="buttonDisabled" type="button" style="font-size: 12px"><svg height="10" width="10" viewBox="0 0 10 10">
+                        <button class="buttonDisabled" type="button" style="font-size: 0.5vw"><svg height="10" width="10" viewBox="0 0 10 10">
                           <circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="black" />
                         </svg> UIC Cancer Center</button>
-                        <button class="buttonDisabled" type="button" style="font-size: 12px"><svg height="10" width="10" viewBox="0 0 10 10">
+                        <button class="buttonDisabled" type="button" style="font-size: 0.5vw"><svg height="10" width="10" viewBox="0 0 10 10">
                           <circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="blue" />
                         </svg> University of Chicago Cancer Center</button>
-                        <button class="buttonDisabled" type="button" style="font-size: 12px"><svg height="10" width="10" viewBox="0 0 10 10">
+                        <button class="buttonDisabled" type="button" style="font-size: 0.5vw"><svg height="10" width="10" viewBox="0 0 10 10">
                           <circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="yellow" />
                         </svg> Robert H. Lurie Cancer Center</button>
-                        <button class="buttonDisabled" type="button" style="font-size: 12px"><svg height="10" width="10" viewBox="0 0 10 10">
+                        <button class="buttonDisabled" type="button" style="font-size: 0.5vw"><svg height="10" width="10" viewBox="0 0 10 10">
                           <circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="#fc8d62" />
                         </svg> Rush University Cancer Center</button>
                     </div>
@@ -179,110 +181,110 @@
                     
                     <div class="DemoZipAxisText" id="DemoZipAxis"></div>
                     <div id="DemoLegend">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 5% !important;">Legend</h6>
+                        <h6 style="font-size: 0.5vw !important; text-align: center !important; margin-top: 5% !important;">Legend</h6>
 
                         <div class="LegendMargin"></div>
                         <div class="LegendMarginText">
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#80b1d3" />
-                            </svg><span style="font-size: 10px ;">Male</span>
+                            </svg><span style="font-size: 0.5vw ;"> Male</span>
 
                             <span style="margin-left:0.5%;"></span>
 
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#8dd3c7" />
-                            </svg><span style="font-size: 10px ;">Female</span>
+                            </svg><span style="font-size: 0.5vw ;"> Female</span>
 
                             <span style="margin-left:0.5%;"></span>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#2e2e30" />
-                            </svg><span style="font-size: 10px ;">NaN</span>
+                            </svg><span style="font-size: 0.5vw ;"> NaN</span>
 
                             <br>
-                            <!-- <br> -->
+                            <span style="margin-top: 0.6vw"></span>
 
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#66c2a5" />
-                            </svg><span style="font-size: 10px;">White</span>
+                            </svg><span style="font-size: 0.5vw;"> White</span>
 
                             <span style="margin-left:0.5%;"></span>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#fc8d62" />
-                            </svg><span style="font-size: 10px ;">Black</span>
+                            </svg><span style="font-size: 0.5vw ;"> Black</span>
 
                             <span style="margin-left:0.5%;"></span>
 
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#8da0cb" />
-                            </svg><span style="font-size: 10px ;">Hispanic</span>
+                            </svg><span style="font-size: 0.5vw ;"> Hispanic</span>
 
                             <br>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#e78ac3" />
-                            </svg><span style="font-size: 10px ;">American Indian</span>
+                            </svg><span style="font-size: 0.5vw ;"> American Indian</span>
 
                             <span style="margin-left:0.5%;"></span>
                             
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#a6d854" />
-                            </svg><span style="font-size: 10px ;">Asian</span>
+                            </svg><span style="font-size: 0.5vw ;"> Asian</span>
 
                             <br>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#e5c494" />
-                            </svg><span style="font-size: 10px ;">Other</span>
+                            </svg><span style="font-size: 0.5vw ;"> Other</span>
 
                             <span style="margin-left:0.5%;"></span>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#000000" />
-                            </svg><span style="font-size: 10px ;">NaN</span>
+                            </svg><span style="font-size: 0.5vw ;"> NaN</span>
 
                             <br>
-                            <!-- <br> -->
+                            <span style="margin-top: 0.6vw"></span>
 
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#a6cee3" />
-                            </svg><span style="font-size: 10px ;">Medicaid/Medicare</span>
+                            </svg><span style="font-size: 0.5vw ;"> Medicaid/Medicare</span>
 
                             <br>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#1f78b4" />
-                            </svg><span style="font-size: 10px ;">Blue Cross/Blue Shield</span>
+                            </svg><span style="font-size: 0.5vw ;"> Blue Cross/Blue Shield</span>
 
                             <br>
 
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#b2df8a" />
-                            </svg><span style="font-size: 10px ;">Self-Pay</span>
+                            </svg><span style="font-size: 0.5vw ;"> Self-Pay</span>
 
                             <span style="margin-left:0.5%;"></span>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#33a02c" />
-                            </svg><span style="font-size: 10px ;">County Care</span>
+                            </svg><span style="font-size: 0.5vw ;"> County Care</span>
 
                             <span style="margin-left:0.5%;"></span>
                             
 
                             <br>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#fdbf6f" />
-                            </svg><span style="font-size: 10px;">Other</span>
+                            </svg><span style="font-size: 0.5vw;"> Other</span>
 
                             <span style="margin-left:0.5%;"></span>
                             
-                            <svg height="12" width="12" viewBox="0 0 12 12">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="0.6vw" width="0.6vw" viewBox="0 0 12 12">
                               <rect width="12" height="12" stroke="black" stroke-width="1" fill="#000000" />
-                            </svg><span style="font-size: 10px ;">NaN</span>
+                            </svg><span style="font-size: 0.5vw ;"> NaN</span>
                         </div>
 
                         
@@ -295,80 +297,80 @@
 
                 <div id = "details-panel" class = "grid-item">
 
-                    <div id="UICMDACCcompariosnHeading"><h6 style="font-size: 12px !important; text-align: center !important; margin-top: 4% !important;">UIC/MDACC Comparison</h6></div>
+                    <div id="UICMDACCcompariosnHeading"><h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 2% !important;">UIC/MDACC Comparison</h6></div>
                     <div class="Heading" id="gender">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">Gender</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">Gender</h6>
                     </div>
                     <div class="Heading" id="tcat">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">T-cat</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">T-cat</h6>
                     </div>
                     <div class="Heading" id="ncat">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">N-cat</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">N-cat</h6>
                     </div>
                     <div class="Heading" id="race">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">Race</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">Race</h6>
                     </div>
                     <div class="Heading" id="hpv">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">HPV</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">HPV</h6>
                     </div>
                     <div class="Heading" id="feeding">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">Feeding Tube</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">Feeding Tube</h6>
                     </div>
                     <div class="Heading" id="survival">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">Survival</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">Survival</h6>
                     </div>
                     <div class="Heading" id="treatment">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 40% !important;">Therapeutic Combination</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 40% !important;">Therapeutic Combination</h6>
                     </div>
 
                     <div class="Heading" id="UICHeading1">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC (448)</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">UIC (448)</h6>
                     </div>
                     <div class="Heading" id="UICHeading2">
                         <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
                     </div>
                     <div class="Heading" id="UICHeading3">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
                     </div>
                     <div class="Heading" id="UICHeading4">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
                     </div>
                     <div class="Heading" id="UICHeading5">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
                     </div>
                     <div class="Heading" id="UICHeading6">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
                     </div>
                     <div class="Heading" id="UICHeading7">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
                     </div>
                     <div class="Heading" id="UICHeading8">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">UIC</h6>
                     </div>
 
                     <div class="Heading" id="MDACCHeading1">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC (644)</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC (644)</h6>
                     </div>
                     <div class="Heading" id="MDACCHeading2">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
                     </div>
                     <div class="Heading" id="MDACCHeading3">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
                     </div>
                     <div class="Heading" id="MDACCHeading4">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
                     </div>
                     <div class="Heading" id="MDACCHeading5">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
                     </div>
                     <div class="Heading" id="MDACCHeading6">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
                     </div>
                     <div class="Heading" id="MDACCHeading7">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
                     </div>
                     <div class="Heading" id="MDACCHeading8">
-                        <h6 style="font-size: 12px !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
+                        <h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 25% !important;">MDACC</h6>
                     </div>
 
 
@@ -425,35 +427,35 @@
 
 
                     <div id="RaceLegendandPatientLegend">
-                    	<h6 style="font-size: 14px !important; text-align: center !important; margin-top: 2% !important; font-size: 12px;">Race Legend</h6>
-                        <span style="margin-left:2%;"></span>
-                    	<svg height="15" width="15" viewBox="0 0 15 15">
+                    	<h6 style="font-size: 0.6vw !important; text-align: center !important; margin-top: 1% !important; font-size: 0.6vw;">Race Legend</h6>
+                        <span style="margin-left:8%;"></span>
+                    	<svg height="0.7vw" width="0.7vw" viewBox="0 0 15 15">
                           <rect width="15" height="15" stroke="black" stroke-width="1" fill="#80b1d3" />
-                        </svg><span style="font-size: 12px !important;">White</span>
+                        </svg><span style="font-size: 0.6vw !important;">White</span>
 
                         <span style="margin-left:1%;"></span>
 
-                        <svg height="15" width="15" viewBox="0 0 15 15">
+                        <svg height="0.7vw" width="0.7vw" viewBox="0 0 15 15">
                           <rect width="15" height="15" stroke="black" stroke-width="1" fill="#8dd3c7" />
-                        </svg><span style="font-size: 12px !important;">Black</span>
+                        </svg><span style="font-size: 0.6vw !important;">Black</span>
 
                         <span style="margin-left:1%;"></span>
                         
-                        <svg height="15" width="15" viewBox="0 0 15 15">
+                        <svg height="0.7vw" width="0.7vw" viewBox="0 0 15 15">
                           <rect width="15" height="15" stroke="black" stroke-width="1" fill="#fb8072" />
-                        </svg><span style="font-size: 12px !important;">Hispanic</span>
+                        </svg><span style="font-size: 0.6vw !important;">Hispanic</span>
 
                         <span style="margin-left:1%;"></span>
                         
-                        <svg height="15" width="15" viewBox="0 0 15 15">
+                        <svg height="0.7vw" width="0.7vw" viewBox="0 0 15 15">
                           <rect width="15" height="15" stroke="black" stroke-width="1" fill="#b3de69" />
-                        </svg><span style="font-size: 12px !important;">Asian</span>
+                        </svg><span style="font-size: 0.6vw !important;">Asian</span>
 
                         <span style="margin-left:1%;"></span>
                         
-                        <svg height="15" width="15" viewBox="0 0 15 15">
+                        <svg height="0.7vw" width="0.7vw" viewBox="0 0 15 15">
                           <rect width="15" height="15" stroke="black" stroke-width="1" fill="#fdb462" />
-                        </svg><span style="font-size: 12px !important;">Others</span>
+                        </svg><span style="font-size: 0.6vw !important;">Others</span>
 
                        <!--  <h6 style="font-size: 14px !important; text-align: center !important; margin-top: 5% !important;">Patient Legend</h6>
                         <span style="margin-left:20%;"></span>
@@ -470,20 +472,20 @@
 
                     <!-- Linechart -->
                     <div class="ClusteringHeading" id="ClusteringHeading">
-                    	<div id="map-heading"><h6 style="font-size: 12px; margin-top: 6% !important;">UIC and MDACC Patiens' 2D projection</h6>
+                    	<div id="map-heading"><h6 style="font-size: 0.6vw; margin-top: 3% !important;">UIC and MDACC Patiens' 2D projection</h6>
                 		</div>
                     </div>
                     <div class="ScatterButton" id="ClusteringButton1">
-                        <h6 style="font-size: 15px; margin-left: 2% !important; margin-top: 2% !important; font-size: 12px;">Cohorts: 
+                        <h6 style="font-size: 15px; margin-left: 2% !important; margin-top: 2% !important; font-size: 0.6vw;">Cohorts: 
 
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="UICscatterButton" type="button" onclick="UICButton()" style="font-size: 10px"><svg height="10" width="10" viewBox="0 0 10 10">
+                            <button id="UICscatterButton" type="button" onclick="UICButton()" style="font-size: 0.4vw"><svg height="0.4vw" width="0.4vw" viewBox="0 0 10 10">
                             <circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="black" />
                             </svg> UIC </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="MDACCscatterButton" type="button" onclick="MDACCButton()" style="font-size: 10px"><svg height="10" width="10" viewBox="0 0 10 10">
+                            <button id="MDACCscatterButton" type="button" onclick="MDACCButton()" style="font-size: 0.4vw"><svg height="0.4vw" width="0.4vw" viewBox="0 0 10 10">
                             <rect width="10" height="10"  stroke="black" stroke-width="1" fill="black" />
                             </svg> MDACC </button>
 
@@ -492,16 +494,16 @@
                             Therapeutic:
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="CCscatterButton" type="button" onclick="CCButton()" style="font-size: 10px"> CC </button>
+                            <button id="CCscatterButton" type="button" onclick="CCButton()" style="font-size: 0.4vw"> CC </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="ICCCscatterButton" type="button" onclick="ICCCButton()" style="font-size: 10px"> IC+CC </button>
+                            <button id="ICCCscatterButton" type="button" onclick="ICCCButton()" style="font-size: 0.4vw"> IC+CC </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="RadscatterButton" type="button" onclick="RadButton()" style="font-size: 10px"> Radiation </button>
+                            <button id="RadscatterButton" type="button" onclick="RadButton()" style="font-size: 0.4vw"> Radiation </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="ICRadscatterButton" type="button" onclick="ICRadButton()" style="font-size: 10px"> IC+Rad </button>
+                            <button id="ICRadscatterButton" type="button" onclick="ICRadButton()" style="font-size: 0.4vw"> IC+Rad </button>
 
                         </h6>
                         
@@ -509,36 +511,36 @@
                     </div>
 
                     <div class="ScatterButton" id="ClusteringButton2">
-                        <h6 style="font-size: 15px; margin-left: 2% !important; margin-top: 2% !important; font-size: 12px;">T-category: 
+                        <h6 style="font-size: 0.6vw; margin-left: 2% !important; margin-top: 2% !important; font-size: 0.6vw;">T-category: 
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T0scatterButton" type="button" onclick="T0Button()" style="font-size: 10px"> T0 </button>
+                            <button id="T0scatterButton" type="button" onclick="T0Button()" style="font-size: 0.4vw"> T0 </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T1scatterButton" type="button" onclick="T1Button()" style="font-size: 10px"> T1 </button>
+                            <button id="T1scatterButton" type="button" onclick="T1Button()" style="font-size: 0.4vw"> T1 </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T2scatterButton" type="button" onclick="T2Button()" style="font-size: 10px"> T2 </button>
+                            <button id="T2scatterButton" type="button" onclick="T2Button()" style="font-size: 0.4vw"> T2 </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T3scatterButton" type="button" onclick="T3Button()" style="font-size: 10px"> T3 </button>
+                            <button id="T3scatterButton" type="button" onclick="T3Button()" style="font-size: 0.4vw"> T3 </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T4scatterButton" type="button" onclick="T4Button()" style="font-size: 10px"> T4 </button>
+                            <button id="T4scatterButton" type="button" onclick="T4Button()" style="font-size: 0.4vw"> T4 </button>
 
                             N-category:
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N0scatterButton" type="button" onclick="N0Button()" style="font-size: 10px"> N0 </button>
+                            <button id="N0scatterButton" type="button" onclick="N0Button()" style="font-size: 0.4vw"> N0 </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N1scatterButton" type="button" onclick="N1Button()" style="font-size: 10px"> N1 </button>
+                            <button id="N1scatterButton" type="button" onclick="N1Button()" style="font-size: 0.4vw"> N1 </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N2scatterButton" type="button" onclick="N2Button()" style="font-size: 10px"> N2 </button>
+                            <button id="N2scatterButton" type="button" onclick="N2Button()" style="font-size: 0.4vw"> N2 </button>
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N3scatterButton" type="button" onclick="N3Button()" style="font-size: 10px"> N3 </button>
+                            <button id="N3scatterButton" type="button" onclick="N3Button()" style="font-size: 0.4vw"> N3 </button>
 
 
                         </h6>

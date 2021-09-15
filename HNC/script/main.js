@@ -615,7 +615,7 @@ d3.json("data/mapChicago4.geojson", function(json) {
                         .attr('x', 0)
                         .attr('y', "45%")
                         .style("text-anchor", "start")
-                        .attr("font-size","12px")
+                        .style("font" ,"0.6vw sans-serif")
                         .text('Number of HNC cases');
 
 
@@ -647,7 +647,7 @@ d3.json("data/mapChicago4.geojson", function(json) {
                             .attr("y", 30)
                             .attr("dy", ".35em")
                             .style("text-anchor", "start")
-                            .style("font" ,"12px sans-serif")
+                            .style("font" ,"0.5vw sans-serif")
                             .text(String(legendCancerText[i]));
                     };
 
@@ -865,7 +865,7 @@ function UICCposition(){
                         .attr('x', 0)
                         .attr('y', "55%")
                         .style("text-anchor", "start")
-                        .attr("font-size",'12px')
+                        .style("font" ,"0.6vw sans-serif")
                         .text('Grocery Stores');
 
 
@@ -916,7 +916,7 @@ function UICCposition(){
                             .attr("x", 30)
                             .attr("dy", ".35em")
                             .style("text-anchor", "start")
-                            .style("font" ,"10px sans-serif")
+                            .style("font" ,"0.5vw sans-serif")
                             .text(String(legendText[i]));
 
                     };
@@ -1021,7 +1021,7 @@ function UICCposition(){
                     .attr('x', 0)
                     .attr('y', "45%")
                     .style("text-anchor", "start")
-                    .attr("font-size",'12px')
+                    .style("font" ,"0.6vw sans-serif")
                     .text('Per capita income');
 
 
@@ -1053,7 +1053,7 @@ function UICCposition(){
                         .attr("y", 30)
                         .attr("dy", ".35em")
                         .style("text-anchor", "start")
-                        .style("font" ,"8px sans-serif")
+                        .style("font" ,"0.5vw sans-serif")
                         .text(String(legendText[i]));
                 };
 
@@ -1178,7 +1178,7 @@ function IncomeRemove(){
                     .append('text')
                     .attr("x","3%")
                     .attr("y","60%")
-                    .attr("font-size",'12px')
+                    .style("font" ,"0.5vw sans-serif")
                     .text('Education Rate(per 100)');
 
 
@@ -1374,7 +1374,7 @@ function EducationRemove(){
 
 
                 var mapheight1 = $('.map').height();
-                var mapheight2 = mapheight1 - ((mapheight1*26)/100);
+                var mapheight2 = mapheight1 - ((mapheight1*30)/100);
                 var width1 = $(".map").width()*0.20;
 
                 var key = d3.select(".map")
@@ -1390,8 +1390,8 @@ function EducationRemove(){
                     .attr("class","eduIncome-legend-heading")
                     .append('text')
                     .attr("x",40)
-                    .attr("y",150)
-                    .attr("font-size",'12px')
+                    .attr("y",145)
+                    .style("font" ,"0.6vw sans-serif")
                     .text('Income');
 
                 key.append('g')
@@ -1399,8 +1399,8 @@ function EducationRemove(){
                     .attr("height",50)
                     .attr("class","eduIncome-legend-heading")
                     .append('text')
-                    .attr("font-size",'12px')
-                    .attr("transform", "translate(-60,80)" + "rotate(-90)")
+                    .style("font" ,"0.5vw sans-serif")
+                    .attr("transform", "translate(-55,80)" + "rotate(-90)")
                     .text('Education');
 
                 for (var i=0;i<3;i++){
@@ -1441,7 +1441,7 @@ function EducationRemove(){
                         .attr("y", 130)
                         .attr("dy", ".35em")
                         .style("text-anchor", "start")
-                        .style("font" ,"10px sans-serif")
+                        .style("font" ,"0.5vw sans-serif")
                         .text(String(IncomeText[i]));
                    }
 
@@ -1452,7 +1452,7 @@ function EducationRemove(){
                         .attr("y", i*40+20)
                         .attr("dy", ".35em")
                         .style("text-anchor", "start")
-                        .style("font" ,"10px sans-serif")
+                        .style("font" ,"0.5vw sans-serif")
                         .text(String(EduText[i]));
                    }
 
@@ -1579,7 +1579,7 @@ function EduIncomeRemove(){
                         .attr('x', 0)
                         .attr('y', "75%")
                         .style("text-anchor", "start")
-                        .attr("font-size",'12px')
+                        .style("font" ,"0.5vw sans-serif")
                         .text('Tobacco Use (Smokers)');
 
                     var legendSmoke = d3.select("#sidebar-right1")
@@ -1606,7 +1606,7 @@ function EduIncomeRemove(){
                                                 .attr("y", i*45 +20)
                                                 .attr("dy", ".35em")
                                                 .style("text-anchor", "start")
-                                                .style("font" ,"12px sans-serif")
+                                                .style("font" ,"0.5vw sans-serif")
                                                 .text(String(legendSmokeText[i]));
                     }
 
@@ -2146,7 +2146,7 @@ function DemoMap(container,zip) {
     d3.selectAll("#DemoZipHeading").selectAll('.DemoZipHeading').remove();
 
 
-    var margin = {top: 5, right: 10, bottom: 10, left: 5},
+    var margin = {top: 0, right: 10, bottom: 10, left: 5},
         width = $(container).width() - margin.left - margin.right-5,
         height = $(container).height() - margin.top - margin.bottom,
         width1 = $(container).width() - 100,
@@ -2160,12 +2160,12 @@ function DemoMap(container,zip) {
         .attr("height", height1)
         .attr("class", "Demo")
         .append("g")
-        .attr("transform", "translate(3,22)");
+        .attr("transform", "translate(3,0)");
 
     var DemoMap1 = d3.select("#DemoZip1")
         .append("svg")
         .attr("width",$("#DemoZip1").width())
-        .attr("height", 20)
+        .attr("height", 30)
         .attr("class", "Demo1")
         .append("g")
         .attr("transform", "translate(0,14)");
@@ -2192,7 +2192,7 @@ function DemoMap(container,zip) {
 
     DemoMap1.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(3,5)")
+        .attr("transform", "translate(4,5)")
         .call(xaxis);
 
     var color = d3.scale.ordinal()
@@ -2342,7 +2342,7 @@ function DemoMap(container,zip) {
 
         d3.max(layers, function(d) {return d[0]["y"] + d[0]["y0"];})
 
-
+        var predictHeight = (height1/3)-10;
         var layer = DemoMap.selectAll(".layers")
             .append("svg")
             .data(layers)
@@ -2359,7 +2359,7 @@ function DemoMap(container,zip) {
             .attr("y", function(d) { return yScale(d.x); })
             .attr("x", function(d) { return xScale(d.y0 ); })
             .attr("width", function(d) {return xScale(d.y + d.y0); })
-            .attr("height", 70)
+            .attr("height", predictHeight)
             .on("mouseover", function (d) {
                 tooltipDemoGenderPlot.transition()
                     .duration(200)
@@ -2377,13 +2377,15 @@ function DemoMap(container,zip) {
 
             });;
 
+        var h = predictHeight+2;
+        var h1 = h+h+2;
         var layer1 = DemoMap.selectAll(".layers")
             .append("svg")
             .data(layers1)
             .enter().append("g")
             .attr("class", "layer1")
             .attr("width", width1)
-            .attr("transform", "translate(0,72)")
+            .attr("transform", "translate(0," + h + ")")
             .style("fill", function(d,i) {
                 return color1(i);
             });
@@ -2394,7 +2396,7 @@ function DemoMap(container,zip) {
             .attr("y", function(d) { return yScale1(d.x); })
             .attr("x", function(d) { return xScale(d.y0 ); })
             .attr("width", function(d) {return xScale(d.y + d.y0); })
-            .attr("height", 70)
+            .attr("height", predictHeight)
             .on("mouseover", function (d) {
                 tooltipDemoGenderPlot.transition()
                     .duration(200)
@@ -2419,7 +2421,7 @@ function DemoMap(container,zip) {
             .enter().append("g")
             .attr("class", "layer2")
             .attr("width", width1)
-            .attr("transform", "translate(0,144)")
+            .attr("transform", "translate(0," + h1 + ")")
             .style("fill", function(d,i) {
                 return color2(i);
             });
@@ -2430,7 +2432,7 @@ function DemoMap(container,zip) {
             .attr("y", function(d) { return yScale2(d.x); })
             .attr("x", function(d) { return xScale(d.y0 ); })
             .attr("width", function(d) {return xScale(d.y + d.y0); })
-            .attr("height", 70)
+            .attr("height", predictHeight)
             .on("mouseover", function (d) {
                 tooltipDemoGenderPlot.transition()
                     .duration(200)
@@ -2462,9 +2464,9 @@ function DemoMap(container,zip) {
                         .attr("class","DemoZipHeading")
                         .append('text')
                         .attr("x", "40%")
-                        .attr("y", 30)
+                        .attr("y", 20)
                         .style("text-anchor", "start")
-                        .attr("font-size",'12spx')
+                        .style("font",'0.6vw sans-serif')
                         .text(text);
 
 }
@@ -2477,7 +2479,7 @@ function DemoAxis(container){
     var margin = {top: 20, right: 10, bottom: 22, left: 5},
     width = $(container).width() - margin.left - margin.right-15,
     height = $(container).height() - margin.top - margin.bottom;
-    p = width - 15;
+    p = width - width/2;
 
     var DemoAxis = d3.select(container)
                             .append("svg")
@@ -2491,14 +2493,14 @@ function DemoAxis(container){
                 .attr("y", "18%")
                 .attr("dy", ".40em")
                 .style("text-anchor", "start")
-                .style("font" ,"12px sans-serif")
+                .style("font",'0.6vw sans-serif')
                 .text("Gender");
 
         DemoAxis.append("text")
                 .attr("y", "40%")
                 .attr("dy", ".40em")
                 .style("text-anchor", "start")
-                .style("font" ,"12px sans-serif")
+                .style("font",'0.6vw sans-serif')
                 .text("Ethnicity");
 
         DemoAxis.append("text")
@@ -2506,7 +2508,7 @@ function DemoAxis(container){
                 .attr("x", -5)
                 .attr("dy", ".40em")
                 .style("text-anchor", "start")
-                .style("font" ,"12px sans-serif")
+                .style("font",'0.6vw sans-serif')
                 .text("Insurance");
 
 
@@ -3135,7 +3137,7 @@ function genderChart(cohort,container,value) {
           })
           .attr("dy", "0.35em")
           .attr("fill", "#000")
-          .style("font", "10px sans-serif")
+          .style("font",'0.4vw sans-serif')
           .style("display", function(d) { 
             if(d[0]["y"]==0)
             {
@@ -3390,7 +3392,7 @@ function tcatChart(cohort,container,value) {
           })
 	      .attr("dy", "0.35em")
 	      .attr("fill", "#000")
-	      .style("font", "10px sans-serif")
+	      .style("font",'0.4vw sans-serif')
 	      .style("display", function(d) { 
 	      	if(d[0]["y"]==0)
 	      	{
@@ -3652,7 +3654,7 @@ function ncatChart(cohort,container,value) {
 	      .attr("x", -9)
 	      .attr("dy", "0.35em")
 	      .attr("fill", "#000")
-	      .style("font", "10px sans-serif")
+	      .style("font",'0.4vw sans-serif')
 	      .style("display", function(d) { 
 	      	if(d[0]["y"]==0)
 	      	{
@@ -3920,7 +3922,7 @@ function feedingChart(cohort,container,value) {
           })
 	      .attr("dy", "0.35em")
 	      .attr("fill", "#000")
-	      .style("font", "10px sans-serif")
+	      .style("font",'0.4vw sans-serif')
 	      .style("display", function(d) { 
 	      	if(d[0]["y"]==0)
 	      	{
@@ -4181,7 +4183,7 @@ function HPVChart(cohort,container,value) {
 	      .attr("y", -14)
 	      .attr("dy", "0.35em")
 	      .attr("fill", "#000")
-	      .style("font", "10px sans-serif")
+	      .style("font",'0.4vw sans-serif')
 	      .style("display", function(d) { 
 	      	if(d[0]["y"]==0)
 	      	{
@@ -4433,7 +4435,7 @@ function SurvivalChart(cohort,container,value) {
 	      .attr("x", -9)
 	      .attr("dy", "0.35em")
 	      .attr("fill", "#000")
-	      .style("font", "10px sans-serif")
+	      .style("font",'0.4vw sans-serif')
 	      .style("display", function(d) { 
 	      	if(d[0]["y"]==0)
 	      	{
@@ -4698,7 +4700,7 @@ function TreatmentChart(cohort,container,value) {
           })
           .attr("dy", "0.35em")
           .attr("fill", "#000")
-          .style("font", "10px sans-serif")
+          .style("font",'0.4vw sans-serif')
           .style("display", function(d) { 
             if(d[0]["y"]==0)
             {
@@ -5151,7 +5153,7 @@ function UICScatterPlot(container){
         .attr("height", $(container).height())
         .attr("class", "ClusteringScatterPlot")
         .append("g")
-        .attr("transform", "translate(30,2)");
+        .attr("transform", "translate(30,5)");
 
 
 
@@ -5417,6 +5419,7 @@ function UICScatterPlot(container){
           .attr("y", 10)
           .attr("dy", ".20em")
           .style("text-anchor", "end")
+          .style("font",'0.6vw sans-serif')
           .text(function(d) { return d;})
 
       var legendScatterCohort2 = UICScatterPlot.selectAll(".legendScatter1")
@@ -5440,6 +5443,7 @@ function UICScatterPlot(container){
           .attr("y", 25)
           .attr("dy", ".20em")
           .style("text-anchor", "end")
+          .style("font",'0.6vw sans-serif')
           .text(function(d) { return d;})
 
 
@@ -5465,6 +5469,7 @@ function UICScatterPlot(container){
           .attr("y", 50)
           .attr("dy", ".30em")
           .style("text-anchor", "end")
+          .style("font",'0.6vw sans-serif')
           .text(function(d) { return d;})
 
 
@@ -5671,7 +5676,7 @@ function rod_knot(container, zipcode, stage){
             Mdata = ["M0", "M1", "Msus", "CM0"];
         }
 
-        var margin = {top: 0, right: 2, bottom: 5, left: 5},
+        var margin = {top: 0, right: 2, bottom: 0, left: 5},
             width = $(container).width() - margin.left - margin.right,
             height = $(container).height() - margin.top - margin.bottom;
 
@@ -5681,7 +5686,7 @@ function rod_knot(container, zipcode, stage){
                             .attr("height", $(container).height())
                             .attr("class", "rodknot")
                             .append("g")
-                            .attr("transform", "translate(20,25)");
+                            .attr("transform", "translate(20,23)");
 
         var XscaleT = d3.scale.ordinal()
                             .domain(Tdata).rangeRoundPoints([10, width-50], 0.05);
@@ -5699,7 +5704,7 @@ function rod_knot(container, zipcode, stage){
         var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
         var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
         var minR = 0;
-        var maxR = 17;
+        var maxR = 15;
 
         var rScaleT = d3.scale.linear()
                         .domain([0, max1])
@@ -5809,9 +5814,9 @@ function rod_knot(container, zipcode, stage){
                         .attr("class","rodknotHeading")
                         .append('text')
                         .attr("x", "30%")
-                        .attr("y", 30)
+                        .attr("y", 20)
                         .style("text-anchor", "start")
-                        .attr("font-size",'12spx')
+                        .style("font",'0.6vw sans-serif')
                         .text(text);
         }
         if(stage=="pathological"){
@@ -5825,9 +5830,9 @@ function rod_knot(container, zipcode, stage){
                         .attr("class","rodknotHeading")
                         .append('text')
                         .attr("x", "30%")
-                        .attr("y", 30)
+                        .attr("y", 20)
                         .style("text-anchor", "start")
-                        .attr("font-size",'12spx')
+                        .style("font",'0.6vw sans-serif')
                         .text(text);
         }
     })
@@ -5870,7 +5875,7 @@ function rod_knotMDACC(container){
         Tdata = ["T0", "T1", "T2", "T3", "T4", "Tis"];
         Ndata = ["N0", "N1", "N2", "N3", "Nx"];
 
-        var margin = {top: 0, right: 2, bottom: 5, left: 5},
+        var margin = {top: 0, right: 2, bottom: 0, left: 5},
             width = $(container).width() - margin.left - margin.right,
             height = $(container).height() - margin.top - margin.bottom;
 
@@ -5880,7 +5885,7 @@ function rod_knotMDACC(container){
                             .attr("height", $(container).height())
                             .attr("class", "rodknot1")
                             .append("g")
-                            .attr("transform", "translate(20,25)");
+                            .attr("transform", "translate(20,23)");
 
         var XscaleT = d3.scale.ordinal()
                             .domain(Tdata).rangeRoundPoints([10, width-50], 0.05);
@@ -5896,9 +5901,9 @@ function rod_knotMDACC(container){
 
         var max1 = Math.max.apply(Math, demoTData.map(a => a.value));
         var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
-        var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
+        //var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
         var minR = 0;
-        var maxR = 17;
+        var maxR = 15;
 
         var rScaleT = d3.scale.linear()
                         .domain([0, max1])
@@ -5961,9 +5966,9 @@ function rod_knotMDACC(container){
                         .attr("class","rodknotHeading")
                         .append('text')
                         .attr("x", "40%")
-                        .attr("y", 30)
+                        .attr("y", 20)
                         .style("text-anchor", "start")
-                        .attr("font-size",'12spx')
+                        .style("font",'0.6vw sans-serif')
                         .text('MDACC Clinical Staging');
 
     })
