@@ -842,11 +842,29 @@ function UICCposition(){
                             return projection(d)[1];})
                         .attr("r", function (d) {
                             if (d[1] > 0 && d[1] <= 5) {
-                                return "2px";}
+                                if(window.innerWidth<1300 || window.innerHeight<800){
+                                    return "1px";
+                                }
+                                else{
+                                    return "2px";
+                                }
+                            }
                             else if (d[1] > 5 && d[1] <= 19) {
-                                return "5px";}
+                                if(window.innerWidth<1300 || window.innerHeight<800){
+                                    return "1.5px";
+                                }
+                                else{
+                                    return "5px";
+                                }
+                            }
                             else {
-                                return "12px";}
+                                if(window.innerWidth<1300 || window.innerHeight<800){
+                                    return "5px";
+                                }
+                                else{
+                                    return "12px";
+                                }
+                            }
                         })
                         .style("stroke", "black")
                         .attr("fill", "#7f3b08")
@@ -857,13 +875,23 @@ function UICCposition(){
                         .append('svg')
                         .attr("width",$("#sidebar-right2").width())
                         .attr("height",25)
-                        .attr("transform", "translate(0,80)")
+                        .attr("transform", function(){
+                            if(window.innerWidth<1300 || window.innerHeight<700){
+                                return "translate(0,60)";
+                            }
+                            else{return "translate(0,80)";}
+                        })
                         .attr("id", "grocery-legend-text")
                         .append('g')
                         .attr("class","text")
                         .append('text')
                         .attr('x', 0)
-                        .attr('y', "55%")
+                        .attr('y', function(){
+                            if(window.innerWidth<1300 || window.innerHeight<700){
+                                return "45%"
+                            }
+                            else{return "55%"}
+                        })
                         .style("text-anchor", "start")
                         .style("font" ,"0.6vw sans-serif")
                         .text('Grocery Stores');
@@ -874,9 +902,24 @@ function UICCposition(){
                     .attr("width", $("#sidebar-right2").width())
                     .attr("height", 100)
                     .attr('class', 'grocery-legend')
-                    .attr("transform", "translate(0,80)")
+                    .attr("transform", function(){
+                            if(window.innerWidth<1300 || window.innerHeight<700){
+                                return "translate(0,60)";
+                            }
+                            else{return "translate(0,80)";}
+                        })
                     .append("g");
                     var data = [];
+
+
+                    if(window.innerWidth<1300 || window.innerHeight<700){
+                        var GLSpace = 15;
+                        var firstGLSpace = 5;
+                    }
+                    else{
+                        var GLSpace = 30;
+                        var firstGLSpace = 10;
+                    }
 
 
                     for (var i = 0; i < 3; i++) {
@@ -886,18 +929,36 @@ function UICCposition(){
                             .attr("cy",
                             function (d) {
                                 if (i==0) {
-                                    return 10;}
+                                    return firstGLSpace;}
                                 else
-                                {return i*30;}
+                                {return i*GLSpace;}
                             })
                         .attr("cx", 15)
                         .attr("r", function (d) {
                             if (i==0) {
-                                return "2px";}
+                                if(window.innerWidth<1300 || window.innerHeight<800){
+                                    return "1px";
+                                }
+                                else{
+                                    return "2px";
+                                }
+                            }
                             else if (i==1) {
-                                return "5px";}
+                                if(window.innerWidth<1300 || window.innerHeight<800){
+                                    return "1.5px";
+                                }
+                                else{
+                                    return "5px";
+                                }
+                            }
                             else {
-                                return "12px";}
+                                if(window.innerWidth<1300 || window.innerHeight<800){
+                                    return "5px";
+                                }
+                                else{
+                                    return "12px";
+                                }
+                            }
                         })
                         .style("stroke", "black")
                         .style("fill", "#7f3b08")
@@ -909,9 +970,9 @@ function UICCposition(){
                         legendGrocery.append("text")
                             .attr("y", function (d) {
                                 if (i==0) {
-                                    return 10;}
+                                    return firstGLSpace;}
                                 else
-                                {return i*30;}
+                                {return i*GLSpace;}
                             })
                             .attr("x", 30)
                             .attr("dy", ".35em")
@@ -1041,7 +1102,12 @@ function UICCposition(){
                 for (var i = 0; i < 5; i++) {
                     legendIncome.append("g:rect")
 	                    .attr("x", i*eachIncomeWidth)
-	                    .attr("height", 20)
+	                    .attr("height", function(){
+                            if(window.innerWidth<1300 || window.innerHeight<700){
+                                return 10;
+                            }
+                            else{return 20;}
+                        })
 	                    .attr("width", eachIncomeWidth)
 	                    .style("fill", colorRange[i])
                         .style("opacity", "0.9");
@@ -1050,7 +1116,12 @@ function UICCposition(){
                     legendText = ['>80k ', '70k', '50k', '40k', '<20k']
                     legendIncome.append("text")
                         .attr("x", i* eachIncomeWidth)
-                        .attr("y", 30)
+                        .attr("y", function(){
+                            if(window.innerWidth<1300 || window.innerHeight<700){
+                                return 20;
+                            }
+                            else{return 30;}
+                        })
                         .attr("dy", ".35em")
                         .style("text-anchor", "start")
                         .style("font" ,"0.5vw sans-serif")
@@ -1377,6 +1448,22 @@ function EducationRemove(){
                 var mapheight2 = mapheight1 - ((mapheight1*30)/100);
                 var width1 = $(".map").width()*0.20;
 
+
+                if(window.innerWidth<1300 || window.innerHeight<700){
+                    var xHeightWidth = 15;
+                    var EduTextySpace = 7.5;
+                    var EduTextxSpace = -25;
+                    var eduX = -30;
+                    var eduY = 30;
+                }
+                else{
+                    var xHeightWidth = 40;
+                    var EduTextySpace = 20;
+                    var EduTextxSpace = -50;
+                    var eduX = -55;
+                    var eduY = 80;
+                }
+
                 var key = d3.select(".map")
                     .append("g")
                     .attr("width",w)
@@ -1389,8 +1476,8 @@ function EducationRemove(){
                     .attr("height",50)
                     .attr("class","eduIncome-legend-heading")
                     .append('text')
-                    .attr("x",40)
-                    .attr("y",145)
+                    .attr("x",xHeightWidth)
+                    .attr("y",3*xHeightWidth+25)
                     .style("font" ,"0.6vw sans-serif")
                     .text('Income');
 
@@ -1400,35 +1487,36 @@ function EducationRemove(){
                     .attr("class","eduIncome-legend-heading")
                     .append('text')
                     .style("font" ,"0.5vw sans-serif")
-                    .attr("transform", "translate(-55,80)" + "rotate(-90)")
+                    .attr("transform", "translate(" + eduX + "," + eduY + ")" + "rotate(-90)")
                     .text('Education');
+
 
                 for (var i=0;i<3;i++){
                     key.append("g:rect")
-                                .attr("x", i*40)
-                                .attr("y", 80)
-                                .attr("height", 40)
-                                .attr("width", 40)
+                                .attr("x", i*xHeightWidth)
+                                .attr("y", 2*xHeightWidth)
+                                .attr("height", xHeightWidth)
+                                .attr("width", xHeightWidth)
                                 .style("fill", EIcolors[i])
                                 .style("opacity", "0.9");
                     
                 }
                 for (var i=0;i<3;i++){
                     key.append("g:rect")
-                                .attr("x", i*40)
-                                .attr("y", 40)
-                                .attr("height", 40)
-                                .attr("width", 40)
+                                .attr("x", i*xHeightWidth)
+                                .attr("y", 1*xHeightWidth)
+                                .attr("height", xHeightWidth)
+                                .attr("width", xHeightWidth)
                                 .style("fill", EIcolors[i+3])
                                 .style("opacity", "0.9");
                     
                 }
                 for (var i=0;i<3;i++){
                     key.append("g:rect")
-                                .attr("x", i*40)
-                                .attr("y", 0)
-                                .attr("height", 40)
-                                .attr("width", 40)
+                                .attr("x", i*xHeightWidth)
+                                .attr("y", 0*xHeightWidth)
+                                .attr("height", xHeightWidth)
+                                .attr("width", xHeightWidth)
                                 .style("fill", EIcolors[i+6])
                                 .style("opacity", "0.9");
                     
@@ -1437,8 +1525,8 @@ function EducationRemove(){
                 var IncomeText = ['<20k ', '20k-80k', '>80k'];
                    for (var i=0;i<3;i++){
                      key.append("text")
-                        .attr("x", i* 42)
-                        .attr("y", 130)
+                        .attr("x", i* xHeightWidth+2)
+                        .attr("y", 3*xHeightWidth+10)
                         .attr("dy", ".35em")
                         .style("text-anchor", "start")
                         .style("font" ,"0.5vw sans-serif")
@@ -1448,8 +1536,8 @@ function EducationRemove(){
                    var EduText = ['>90% ', '60%-90%', '<60%'];
                    for (var i=0;i<3;i++){
                      key.append("text")
-                        .attr("x", -50)
-                        .attr("y", i*40+20)
+                        .attr("x", EduTextxSpace)
+                        .attr("y", i*xHeightWidth+EduTextySpace)
                         .attr("dy", ".35em")
                         .style("text-anchor", "start")
                         .style("font" ,"0.5vw sans-serif")
@@ -1582,10 +1670,25 @@ function EduIncomeRemove(){
                         .style("font" ,"0.5vw sans-serif")
                         .text('Tobacco Use (Smokers)');
 
+                        console.log(window.innerWidth)
+
+                    if(window.innerWidth<1300 || window.innerHeight<800){
+                        var SmokeLegendHeight = $("#sidebar-right1").height()/2;
+                        var Ival = 20;
+                        var SmokeHeight = 15;
+                        var SmokeSpace = 5;
+                    }
+                    else{
+                        var SmokeLegendHeight = 200;
+                        var Ival = 45;
+                        var SmokeHeight = 30;
+                        var SmokeSpace = 20;
+                    }
+
                     var legendSmoke = d3.select("#sidebar-right1")
                                         .append('svg')
                                         .attr("width", $("#sidebar-right1").width())
-                                        .attr("height", 200)
+                                        .attr("height", SmokeLegendHeight)
                                         .attr('class', 'smoke-legend')
                                         .attr("transform", "translate(0,10)")
                                         .append("g");
@@ -1595,15 +1698,15 @@ function EduIncomeRemove(){
                     for (var i = 0; i < 4; i++) {
                         legendSmoke.append("g:rect")
                                     .attr("x", 5)
-                                    .attr("y",i*45 +2)
-                                    .attr("height", 30)
-                                    .attr("width", 30)
+                                    .attr("y",i*Ival +2)
+                                    .attr("height", SmokeHeight)
+                                    .attr("width", SmokeHeight)
                                     .style("fill", '#FFFFFF')
                                     .style("opacity", "0.9");
 
                                     legendSmoke.append("text")
                                                 .attr("x", 50)
-                                                .attr("y", i*45 +20)
+                                                .attr("y", i*Ival +SmokeSpace)
                                                 .attr("dy", ".35em")
                                                 .style("text-anchor", "start")
                                                 .style("font" ,"0.5vw sans-serif")
@@ -1613,9 +1716,9 @@ function EduIncomeRemove(){
                     for (var i = 0; i < 4; i++) {
                         legendSmoke.append("g:rect")
                                     .attr("x", 5)
-                                    .attr("y",i*45 +2)
-                                    .attr("height", 30)
-                                    .attr("width", 30)
+                                    .attr("y",i*Ival +2)
+                                    .attr("height", SmokeHeight)
+                                    .attr("width", SmokeHeight)
                                     .attr("style", "outline: thin solid black;")
                                     .style("fill", function(d){
                                         return tlist[i].url();
@@ -5688,23 +5791,107 @@ function rod_knot(container, zipcode, stage){
                             .append("g")
                             .attr("transform", "translate(20,23)");
 
-        var XscaleT = d3.scale.ordinal()
+        var innerWidth = window.innerWidth;
+        var innerHeight = window.innerHeight;
+        console.log(innerWidth, innerHeight)
+
+        if(innerWidth<1300 || innerHeight<700){
+            var XscaleT = d3.scale.ordinal()
                             .domain(Tdata).rangeRoundPoints([10, width-50], 0.05);
-        var XAxisT = d3.svg.axis()
+            var XAxisT = d3.svg.axis()
+                            .scale(XscaleT)
+                            .orient('bottom')
+                            .tickSize(10,0);
+                             // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                .attr("class", "x axis")
+                                .attr("transform", "translate(0,-2)")
+                                .call(XAxisT);
+
+
+            var max1 = Math.max.apply(Math, demoTData.map(a => a.value));
+            var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
+            var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
+            var minR = 0;
+            var maxR = 8;
+
+            var XscaleN = d3.scale.ordinal()
+                            .domain(Ndata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisN = d3.svg.axis()
+                            .scale(XscaleN)
+                            .orient('bottom')
+                            .tickSize(10,0);
+                             // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                .attr("class", "x axis")
+                                .attr("transform", "translate(0,35)")
+                                .call(XAxisN);
+
+            var XscaleM = d3.scale.ordinal()
+                            .domain(Mdata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisM = d3.svg.axis()
+                            .scale(XscaleM)
+                            .orient('bottom')
+                            .tickSize(10,0);
+                             // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                .attr("class", "x axis")
+                                .attr("transform", "translate(0,68)")
+                                .call(XAxisM);
+
+            var NCenter = -22;
+            var MCenter = -38;
+
+        }
+        else{
+            var XscaleT = d3.scale.ordinal()
+                            .domain(Tdata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisT = d3.svg.axis()
                             .scale(XscaleT)
                             .orient('bottom')
                             .tickSize(15,0);
                              // x-axis
-        var x_axis = ClinicalPlot.append("g")
+            var x_axis = ClinicalPlot.append("g")
                                 .attr("class", "x axis")
                                 .call(XAxisT);
 
 
-        var max1 = Math.max.apply(Math, demoTData.map(a => a.value));
-        var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
-        var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
-        var minR = 0;
-        var maxR = 15;
+            var max1 = Math.max.apply(Math, demoTData.map(a => a.value));
+            var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
+            var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
+            var minR = 0;
+            var maxR = 15;
+
+
+            var XscaleN = d3.scale.ordinal()
+                            .domain(Ndata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisN = d3.svg.axis()
+                            .scale(XscaleN)
+                            .orient('bottom')
+                            .tickSize(15,0);
+                             // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                .attr("class", "x axis")
+                                .attr("transform", "translate(0,55)")
+                                .call(XAxisN);
+
+            var XscaleM = d3.scale.ordinal()
+                            .domain(Mdata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisM = d3.svg.axis()
+                            .scale(XscaleM)
+                            .orient('bottom')
+                            .tickSize(15,0);
+                             // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                .attr("class", "x axis")
+                                .attr("transform", "translate(0,105)")
+                                .call(XAxisM);
+
+            var NCenter = -3;
+            var MCenter = -3;
+
+        }
+
 
         var rScaleT = d3.scale.linear()
                         .domain([0, max1])
@@ -5737,18 +5924,7 @@ function rod_knot(container, zipcode, stage){
                     })
                     .style("stroke", "black");
 
-        var XscaleN = d3.scale.ordinal()
-                            .domain(Ndata).rangeRoundPoints([10, width-50], 0.05);
-        var XAxisN = d3.svg.axis()
-                            .scale(XscaleN)
-                            .orient('bottom')
-                            .tickSize(15,0);
-                             // x-axis
-        var x_axis = ClinicalPlot.append("g")
-                                .attr("class", "x axis")
-                                .attr("transform", "translate(0,55)")
-                                .call(XAxisN);
-
+        
         ClinicalPlot.selectAll('.circle1')
                     .data(demoNData)
                     .enter()
@@ -5758,7 +5934,7 @@ function rod_knot(container, zipcode, stage){
                         //console.log(d);
                         return XscaleN(d.ncat)
                     })
-                    .attr('cy', -3)
+                    .attr('cy', NCenter)
                     .attr('r', function(d){
                         return rScaleN(d.value);
                     })
@@ -5769,17 +5945,6 @@ function rod_knot(container, zipcode, stage){
                     .style("stroke", "black")
                     .attr("transform", "translate(0,55)");
 
-        var XscaleM = d3.scale.ordinal()
-                            .domain(Mdata).rangeRoundPoints([10, width-50], 0.05);
-        var XAxisM = d3.svg.axis()
-                            .scale(XscaleM)
-                            .orient('bottom')
-                            .tickSize(15,0);
-                             // x-axis
-        var x_axis = ClinicalPlot.append("g")
-                                .attr("class", "x axis")
-                                .attr("transform", "translate(0,105)")
-                                .call(XAxisM);
 
         ClinicalPlot.selectAll('.circle2')
                     .data(demoMData)
@@ -5790,7 +5955,7 @@ function rod_knot(container, zipcode, stage){
                         //console.log(d);
                         return XscaleM(d.mcat)
                     })
-                    .attr('cy', -3)
+                    .attr('cy', MCenter)
                     .attr('r', function(d){
                         return rScaleM(d.value);
                         /*if(d.value>5){return 1.5*d.value;}
@@ -5887,23 +6052,72 @@ function rod_knotMDACC(container){
                             .append("g")
                             .attr("transform", "translate(20,23)");
 
-        var XscaleT = d3.scale.ordinal()
+        if(innerWidth<1300 || innerHeight<700){
+            var XscaleT = d3.scale.ordinal()
                             .domain(Tdata).rangeRoundPoints([10, width-50], 0.05);
-        var XAxisT = d3.svg.axis()
+            var XAxisT = d3.svg.axis()
+                            .scale(XscaleT)
+                            .orient('bottom')
+                            .tickSize(10,0);
+                             // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                .attr("class", "x axis")
+                                .call(XAxisT);
+
+            var max1 = Math.max.apply(Math, demoTData.map(a => a.value));
+            var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
+            //var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
+            var minR = 0;
+            var maxR = 8;
+
+            var XscaleN = d3.scale.ordinal()
+                            .domain(Ndata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisN = d3.svg.axis()
+                                .scale(XscaleN)
+                                .orient('bottom')
+                                .tickSize(10,0);
+                                 // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                    .attr("class", "x axis")
+                                    .attr("transform", "translate(0,36)")
+                                    .call(XAxisN);
+
+            var NCenter = -22;
+
+        }
+        else{
+            var XscaleT = d3.scale.ordinal()
+                            .domain(Tdata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisT = d3.svg.axis()
                             .scale(XscaleT)
                             .orient('bottom')
                             .tickSize(15,0);
                              // x-axis
-        var x_axis = ClinicalPlot.append("g")
+            var x_axis = ClinicalPlot.append("g")
                                 .attr("class", "x axis")
                                 .call(XAxisT);
 
+            var max1 = Math.max.apply(Math, demoTData.map(a => a.value));
+            var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
+            //var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
+            var minR = 0;
+            var maxR = 15;
 
-        var max1 = Math.max.apply(Math, demoTData.map(a => a.value));
-        var max2 = Math.max.apply(Math, demoNData.map(a => a.value));
-        //var max3 = Math.max.apply(Math, demoMData.map(a => a.value));
-        var minR = 0;
-        var maxR = 15;
+            var XscaleN = d3.scale.ordinal()
+                            .domain(Ndata).rangeRoundPoints([10, width-50], 0.05);
+            var XAxisN = d3.svg.axis()
+                                .scale(XscaleN)
+                                .orient('bottom')
+                                .tickSize(15,0);
+                                 // x-axis
+            var x_axis = ClinicalPlot.append("g")
+                                    .attr("class", "x axis")
+                                    .attr("transform", "translate(0,55)")
+                                    .call(XAxisN);
+
+            var NCenter = -3;
+        }
+
 
         var rScaleT = d3.scale.linear()
                         .domain([0, max1])
@@ -5929,18 +6143,6 @@ function rod_knotMDACC(container){
                     .style("fill", "#8dd3c7")
                     .style("stroke", "black");
 
-        var XscaleN = d3.scale.ordinal()
-                            .domain(Ndata).rangeRoundPoints([10, width-50], 0.05);
-        var XAxisN = d3.svg.axis()
-                            .scale(XscaleN)
-                            .orient('bottom')
-                            .tickSize(15,0);
-                             // x-axis
-        var x_axis = ClinicalPlot.append("g")
-                                .attr("class", "x axis")
-                                .attr("transform", "translate(0,55)")
-                                .call(XAxisN);
-
         ClinicalPlot.selectAll('.circle1')
                     .data(demoNData)
                     .enter()
@@ -5950,7 +6152,7 @@ function rod_knotMDACC(container){
                         //console.log(d);
                         return XscaleN(d.ncat)
                     })
-                    .attr('cy', -3)
+                    .attr('cy', NCenter)
                     .attr('r', function(d){
                         return rScaleN(d.value);
                     })
