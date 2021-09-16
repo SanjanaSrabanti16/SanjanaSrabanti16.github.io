@@ -5311,7 +5311,7 @@ function UICScatterPlot(container){
           .enter().append("path")
           .attr("class", "point")
           .attr("d", function(d,i) {
-          if(i>1 && i<448){return d3.svg.symbol()
+          if(i>0 && i<448){return d3.svg.symbol()
           	.size(130)
           	.type(d3.svg.symbolTypes[0])();} 
           else{return d3.svg.symbol()
@@ -5330,69 +5330,1259 @@ function UICScatterPlot(container){
             }
           })
           .style("opacity", function(d){
-            if(UICbuttonFlag==1){
+            if(UICbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+            
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1&& CCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC" && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="UIC"  && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && T0buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T1buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T2buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T3buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==3){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && T4buttonFlag==1){
+                if(d.Cohort=="UIC" && d.T_category==4){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(UICbuttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="UIC" && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+            else if(UICbuttonFlag==1){
                 if(d.Cohort=="UIC"){return 1;}
-                else{return 0.2;}
+                else{return 0.1;}
+            }
+
+
+            //MDACC check
+
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+            
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.N_category==3){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==0 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N0buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==0 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N0buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==0 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && N1buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==1 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N1buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==1 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N1buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==1 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && N2buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==2 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N2buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==2 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N2buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==2 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && N3buttonFlag==1 && CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==3 && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N3buttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==3 && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N3buttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==3 && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1&& CCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && ICCCbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.IC_CC==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC" && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && RadbuttonFlag==1){
+                if(d.Cohort=="MDACC"  && d.Radiation_alone==1){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && T0buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T1buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T2buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T3buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==3){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && T4buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.T_category==4){return 1;}
+                else{return 0.1;}
+            }
+
+            else if(MDACCbuttonFlag==1 && N0buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==0){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N1buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==1){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N2buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==2){return 1;}
+                else{return 0.1;}
+            }
+            else if(MDACCbuttonFlag==1 && N3buttonFlag==1){
+                if(d.Cohort=="MDACC" && d.N_category==3){return 1;}
+                else{return 0.1;}
             }
             else if(MDACCbuttonFlag==1){
                 if(d.Cohort=="MDACC"){return 1;}
-                else{return 0.2;}
+                else{return 0.1;}
             }
 
-            else if(T0buttonFlag==1){
-                if(d.T_category==0){return 1;}
-                else{return 0.2;}
-            }
-            else if(T1buttonFlag==1){
-                if(d.T_category==1){return 1;}
-                else{return 0.2;}
-            }
-            else if(T2buttonFlag==1){
-                if(d.T_category==2){return 1;}
-                else{return 0.2;}
-            }
-            else if(T3buttonFlag==1){
-                if(d.T_category==3){return 1;}
-                else{return 0.2;}
-            }
-            else if(T4buttonFlag==1){
-                if(d.T_category==4){return 1;}
-                else{return 0.2;}
-            }
-
-            else if(N0buttonFlag==1){
-                if(d.N_category==0){return 1;}
-                else{return 0.2;}
-            }
-            else if(N1buttonFlag==1){
-                if(d.N_category==1){return 1;}
-                else{return 0.2;}
-            }
-            else if(N2buttonFlag==1){
-                if(d.N_category==2){return 1;}
-                else{return 0.2;}
-            }
-            else if(N3buttonFlag==1){
-                if(d.N_category==3){return 1;}
-                else{return 0.2;}
-            }
-
-            else if(CCbuttonFlag==1){
-                if(d.CC==1){return 1;}
-                else{return 0.2;}
-            }
-            else if(ICCCbuttonFlag==1){
-                if(d.IC_CC==1){return 1;}
-                else{return 0.2;}
-            }
-            else if(RadbuttonFlag==1){
-                if(d.Radiation_alone==1){return 1;}
-                else{return 0.2;}
-            }
-            else if(ICRadbuttonFlag==1){
-                if(d.IC_Radiation_alone==1){return 1;}
-                else{return 0.2;}
-            }
             else{return 1;}
           })
           .style("stroke", "black")
@@ -6199,153 +7389,168 @@ var ICCCbuttonFlag = 0;
 var RadbuttonFlag = 0;
 var ICRadbuttonFlag = 0;
 
+
+function Apply(){
+    UICScatterPlot("#UICScatterplot");
+}
+
 function UICButton(){
     if(UICbuttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#UICscatterButton")
             .style("background-color", "#a1d99b");
         UICbuttonFlag = 1;
+        //UICScatterPlot("#UICScatterplot")
+    }
+    else if(UICbuttonFlag==1){
+        ButtonRemove()
         UICScatterPlot("#UICScatterplot")
     }
 }
 
 function MDACCButton(){
     if(MDACCbuttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#MDACCscatterButton")
             .style("background-color", "#a1d99b");
         MDACCbuttonFlag = 1;
+        //UICScatterPlot("#UICScatterplot")
+    }
+    else if(MDACCbuttonFlag==1){
+        ButtonRemove()
         UICScatterPlot("#UICScatterplot")
     }
 }
 
 function T0Button(){
     if(T0buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#T0scatterButton")
             .style("background-color", "#a1d99b");
         T0buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
+
 function T1Button(){
     if(T1buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#T1scatterButton")
             .style("background-color", "#a1d99b");
         T1buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function T2Button(){
     if(T2buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#T2scatterButton")
             .style("background-color", "#a1d99b");
         T2buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function T3Button(){
     if(T3buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#T3scatterButton")
             .style("background-color", "#a1d99b");
         T3buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function T4Button(){
     if(T4buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#T4scatterButton")
             .style("background-color", "#a1d99b");
         T4buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function N0Button(){
     if(N0buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#N0scatterButton")
             .style("background-color", "#a1d99b");
         N0buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function N1Button(){
     if(N1buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#N1scatterButton")
             .style("background-color", "#a1d99b");
         N1buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function N2Button(){
     if(N2buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#N2scatterButton")
             .style("background-color", "#a1d99b");
         N2buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function N3Button(){
     if(N3buttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#N3scatterButton")
             .style("background-color", "#a1d99b");
         N3buttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function CCButton(){
     if(CCbuttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#CCscatterButton")
             .style("background-color", "#a1d99b");
         CCbuttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
+
 function ICCCButton(){
     if(ICCCbuttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#ICCCscatterButton")
             .style("background-color", "#a1d99b");
         ICCCbuttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function RadButton(){
     if(RadbuttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#RadscatterButton")
             .style("background-color", "#a1d99b");
         RadbuttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
 function ICRadButton(){
     if(ICRadbuttonFlag==0){
-        ButtonRemove()
+        //ButtonRemove()
         d3.selectAll("#ICRadscatterButton")
             .style("background-color", "#a1d99b");
         ICRadbuttonFlag = 1;
-        UICScatterPlot("#UICScatterplot")
+        //UICScatterPlot("#UICScatterplot")
     }
 }
 
