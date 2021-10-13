@@ -477,37 +477,43 @@
                 		</div>
                     </div>
                     <div class="ScatterButton" id="ClusteringButton1">
-                        <h6 style="font-size: 15px; margin-left: 2% !important; margin-top: 2% !important; font-size: 0.6vw;">Cohorts: 
+                        <h6 style="font-size: 15px; margin-left: 2% !important; margin-top: 0% !important; font-size: 0.6vw;">Cohorts: 
 
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="UICscatterButton" type="button" onclick="UICButton()" style="font-size: 0.4vw"><svg height="0.4vw" width="0.4vw" viewBox="0 0 10 10">
+                            <input type="checkbox" id="UICscatterButton" name="UICscatterButton" value="UICscatterButton" onclick="UICButton()">UIC
+                           <!--  <button id="UICscatterButton" type="button" onclick="UICButton()" style="font-size: 0.4vw"><svg height="0.4vw" width="0.4vw" viewBox="0 0 10 10">
                             <circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="black" />
-                            </svg> UIC </button>
+                            </svg> UIC </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="MDACCscatterButton" type="button" onclick="MDACCButton()" style="font-size: 0.4vw"><svg height="0.4vw" width="0.4vw" viewBox="0 0 10 10">
+                            <input type="checkbox" id="MDACCscatterButton" name="MDACCscatterButton" value="MDACCscatterButton" onclick="MDACCButton()">MDACC
+                            <!-- <button id="MDACCscatterButton" type="button" onclick="MDACCButton()" style="font-size: 0.4vw"><svg height="0.4vw" width="0.4vw" viewBox="0 0 10 10">
                             <rect width="10" height="10"  stroke="black" stroke-width="1" fill="black" />
-                            </svg> MDACC </button>
+                            </svg> MDACC </button> -->
 
-                            <span style="margin-left: 1%"></span>
+                            <span style="margin-left: 4%"></span>
 
                             Therapeutic:
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="CCscatterButton" type="button" onclick="CCButton()" style="font-size: 0.4vw"> CC </button>
+                            <input type="checkbox" id="CCscatterButton" name="CCscatterButton" value="CCscatterButton" onclick="CCButton()">CC
+                            <!-- <button id="CCscatterButton" type="button" onclick="CCButton()" style="font-size: 0.4vw"> CC </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="ICCCscatterButton" type="button" onclick="ICCCButton()" style="font-size: 0.4vw"> IC+CC </button>
+                            <input type="checkbox" id="ICCCscatterButton" name="ICCCscatterButton" value="ICCCscatterButton" onclick="ICCCButton()">IC+CC
+                            <!-- <button id="ICCCscatterButton" type="button" onclick="ICCCButton()" style="font-size: 0.4vw"> IC+CC </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="RadscatterButton" type="button" onclick="RadButton()" style="font-size: 0.4vw"> Radiation </button>
+                            <input type="checkbox" id="RadscatterButton" name="RadscatterButton" value="RadscatterButton" onclick="RadButton()">Radiation
+                            <!-- <button id="RadscatterButton" type="button" onclick="RadButton()" style="font-size: 0.4vw"> Radiation </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="ICRadscatterButton" type="button" onclick="ICRadButton()" style="font-size: 0.4vw"> IC+Rad </button>
+                            <input type="checkbox" id="ICRadscatterButton" name="ICRadscatterButton" value="ICRadscatterButton" onclick="ICRadButton()">IC+Rad
+                            <!-- <button id="ICRadscatterButton" type="button" onclick="ICRadButton()" style="font-size: 0.4vw"> IC+Rad </button> -->
 
-                            <span style="margin-left: 0.7vw"></span>
-                            <button id="ApplyButton" type="button" onclick="Apply()" style="font-size: 0.4vw; background-color: green"> Apply </button>
+                            <!-- <span style="margin-left: 0.7vw"></span>
+                            <button id="ApplyButton" type="button" onclick="Apply()" style="font-size: 0.4vw; background-color: green"> Apply </button> -->
 
                         </h6>
                         
@@ -515,39 +521,62 @@
                     </div>
 
                     <div class="ScatterButton" id="ClusteringButton2">
-                        <h6 style="font-size: 0.6vw; margin-left: 2% !important; margin-top: 2% !important; font-size: 0.6vw;">T-category: 
+                        <h6 style="font-size: 0.6vw; margin-left: 2% !important; margin-top: 1% !important; font-size: 0.6vw;">T-category: 
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T0scatterButton" type="button" onclick="T0Button()" style="font-size: 0.4vw"> T0 </button>
+                            <input type="checkbox" id="T0scatterButton" name="T0scatterButton" value="T0scatterButton" onclick="T0Button()">T0
+                            <!-- <button id="T0scatterButton" type="button" onclick="T0Button()" style="font-size: 0.4vw"> T0 </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T1scatterButton" type="button" onclick="T1Button()" style="font-size: 0.4vw"> T1 </button>
+                            <input type="checkbox" id="T1scatterButton" name="T1scatterButton" value="T1scatterButton" onclick="T1Button()">T1
+                            <!-- <button id="T1scatterButton" type="button" onclick="T1Button()" style="font-size: 0.4vw"> T1 </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T2scatterButton" type="button" onclick="T2Button()" style="font-size: 0.4vw"> T2 </button>
+                            <input type="checkbox" id="T2scatterButton" name="T2scatterButton" value="T2scatterButton" onclick="T2Button()">T2
+                            <!-- <button id="T2scatterButton" type="button" onclick="T2Button()" style="font-size: 0.4vw"> T2 </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T3scatterButton" type="button" onclick="T3Button()" style="font-size: 0.4vw"> T3 </button>
+                            <input type="checkbox" id="T3scatterButton" name="T3scatterButton" value="T3scatterButton" onclick="T3Button()">T3
+                            <!-- <button id="T3scatterButton" type="button" onclick="T3Button()" style="font-size: 0.4vw"> T3 </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="T4scatterButton" type="button" onclick="T4Button()" style="font-size: 0.4vw"> T4 </button>
+                            <input type="checkbox" id="T4scatterButton" name="T4scatterButton" value="T4scatterButton" onclick="T4Button()">T4
+                            <!-- <button id="T4scatterButton" type="button" onclick="T4Button()" style="font-size: 0.4vw"> T4 </button> -->
 
+                            <span style="margin-left: 4%"></span>
                             N-category:
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N0scatterButton" type="button" onclick="N0Button()" style="font-size: 0.4vw"> N0 </button>
+                            <input type="checkbox" id="N0scatterButton" name="N0scatterButton" value="N0scatterButton" onclick="N0Button()">N0
+                            <!-- <button id="N0scatterButton" type="button" onclick="N0Button()" style="font-size: 0.4vw"> N0 </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N1scatterButton" type="button" onclick="N1Button()" style="font-size: 0.4vw"> N1 </button>
+                            <input type="checkbox" id="N1scatterButton" name="N1scatterButton" value="N1scatterButton" onclick="N1Button()">N1
+                            <!-- <button id="N1scatterButton" type="button" onclick="N1Button()" style="font-size: 0.4vw"> N1 </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N2scatterButton" type="button" onclick="N2Button()" style="font-size: 0.4vw"> N2 </button>
+                            <input type="checkbox" id="N2scatterButton" name="N2scatterButton" value="N2scatterButton" onclick="N2Button()">N2
+                            <!-- <button id="N2scatterButton" type="button" onclick="N2Button()" style="font-size: 0.4vw"> N2 </button> -->
 
                             <span style="margin-left: 0.5%"></span>
-                            <button id="N3scatterButton" type="button" onclick="N3Button()" style="font-size: 0.4vw"> N3 </button>
+                            <input type="checkbox" id="N3scatterButton" name="N3scatterButton" value="N3scatterButton" onclick="N3Button()">N3
+                            <!-- <button id="N3scatterButton" type="button" onclick="N3Button()" style="font-size: 0.4vw"> N3 </button> -->
 
 
                         </h6>
+                    </div>
+
+                    <div class="ScatterButton" id="ApplyButton">
+                    	<h6 style="font-size: 0.6vw; margin-left: 2% !important; margin-top: 1% !important; font-size: 0.6vw;">
+                    		<span style="margin-left: 0.7vw"></span>
+                            <button id="ApplyButton" type="button" onclick="Apply()" style="font-size: 0.4vw; background-color: green"> Apply </button>
+
+                        	<span style="margin-left: 3%"></span>
+                          <input type="checkbox" id="KNNButton" name="KNNButton" value="KNNButton" onclick="KNNButton()"> Show KNN
+
+                          <span style="margin-left: 0.7vw"></span>
+                          <span id="UICdropdown1"></span>
+                    	</h6>
                     </div>
 
 

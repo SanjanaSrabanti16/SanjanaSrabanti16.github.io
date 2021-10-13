@@ -396,7 +396,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 /* --- Custom --- */
 .dropdown-menu {
-  min-width: 200px;
+  min-width: 20px;
 }
 .dropdown-menu.columns-2 {
   min-width: 400px;

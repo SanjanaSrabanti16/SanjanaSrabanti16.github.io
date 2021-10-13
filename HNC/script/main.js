@@ -5078,74 +5078,7 @@ TreatmentChart('MDACC', "#MDACCtreatment", "Null")
 }
 */
 
-//UIC Dropdown start
-/*d3.csv('data/UIC.csv', function (patientdata){
-	var UICpID = [];
-	for(var i=0;i<patientdata.length;i++)
-  	{
-    	UICpID.push(patientdata[i].record_id);
-  	}
-  	 var dropdownChange = function() {
-        var patientID = d3.select(this).property('value');
 
-        d3.select('#UICrace').selectAll('.raceAll').remove();
-        d3.select('#UICrace').selectAll('.layer').remove();
-        d3.select('#UICrace').selectAll('.raceLegend').remove();
-        raceChart('UIC', '#UICrace', patientID);
-
-        d3.select('#UICgender').selectAll('.genderAll').remove();
-        d3.select('#UICgender').selectAll('.layer').remove();
-        d3.select('#UICrace').selectAll('.yaxis').remove();
-        genderChart('UIC', '#UICgender', patientID);
-
-        d3.select('#UICtcat').selectAll('.tcatAll').remove();
-        d3.select('#UICtcat').selectAll('.layer').remove();
-        d3.select('#UICtcat').selectAll('.TcatLegend').remove();
-        tcatChart('UIC', '#UICtcat', patientID);
-
-        d3.select('#UICncat').selectAll('.ncatAll').remove();
-        d3.select('#UICncat').selectAll('.layer').remove();
-        d3.select('#UICncat').selectAll('.NcatLegend').remove();
-        ncatChart('UIC', '#UICncat', patientID);
-
-        d3.select('#UICfeeding').selectAll('.FeedingAll').remove();
-        d3.select('#UICfeeding').selectAll('.layer').remove();
-        d3.select('#UICfeeding').selectAll('.FeedingLegend').remove();
-        feedingChart('UIC', '#UICfeeding', patientID);
-
-        d3.select('#UIChpv').selectAll('.HPVall').remove();
-        d3.select('#UIChpv').selectAll('.layer').remove();
-        d3.select('#UIChpv').selectAll('.HPVLegend').remove();
-        HPVChart('UIC', '#UIChpv', patientID);
-
-        d3.select('#UICsurvival').selectAll('.SurvivalAll').remove();
-        d3.select('#UICsurvival').selectAll('.layer').remove();
-        d3.select('#UICsurvival').selectAll('.SurvivalLegend').remove();
-        SurvivalChart('UIC', '#UICsurvival', patientID);
-
-        d3.select('#UICtreatment').selectAll('.TreatmentAll').remove();
-        d3.select('#UICtreatment').selectAll('.layer').remove();
-        d3.select('#UICtreatment').selectAll('.TreatmentLegend').remove();
-        TreatmentChart('UIC', '#UICtreatment', patientID);
-    };
-  	var dropdown = d3.select("#UICdropdown")
-        .append('g')
-        .attr("width", 10)
-        .attr("height", 10)
-        .attr("class","dropdown")
-        .attr("transform", "translate(0,20)")
-        .insert("select", "svg")
-        .on("change", dropdownChange);
-
-    dropdown.selectAll("option")
-        .data(UICpID)
-        .enter().append("option")
-        .attr("value", function (d) {return d; })
-        .text(function (d) {
-            return "UIC Patient " +d;
-        });
-})*/
-//UIC Dropdown ends
 
 //MDACC Dropdown starts
 /*d3.csv('data/MDACC.csv', function (patientdata){
@@ -5226,6 +5159,8 @@ function UICScatterPlot(container){
     d3.selectAll("#UICScatterplot").selectAll('.legendScatter1').remove();
     d3.selectAll("#UICScatterplot").selectAll('.legendMaleFemale').remove();
 
+    d3.selectAll("#dropdownID").remove();
+
     var margin = {top: 20, right: 10, bottom: 22, left: 5},
     width = $(container).width() - margin.left - margin.right-15,
     height = $(container).height() - margin.top - margin.bottom;
@@ -5242,8 +5177,8 @@ function UICScatterPlot(container){
     yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 // setup fill color
-    var legendText = ["Male", "Female"];
-    var LegendColor = ["#af8dc3", "#7fbf7b"];
+    var legendText = ["Male", "Female", "Dead"];
+    var LegendColor = ["#af8dc3", "#7fbf7b", "#FFFFFF"];
     var CohortText = ["UIC", "MDACC"];
     var Cohort2 = ["MDACC"]
     var Cohort1 = ["UIC"]
@@ -5311,23 +5246,23 @@ function UICScatterPlot(container){
           .enter().append("path")
           .attr("class", "point")
           .attr("d", function(d,i) {
-          if(i>0 && i<448){return d3.svg.symbol()
-          	.size(130)
-          	.type(d3.svg.symbolTypes[0])();} 
-          else{return d3.svg.symbol()
-          	.size(130)
-          	.type(d3.svg.symbolTypes[3])();}
+              if(i>0 && i<448){return d3.svg.symbol()
+              	.size(130)
+              	.type(d3.svg.symbolTypes[0])();} 
+              else{return d3.svg.symbol()
+              	.size(130)
+              	.type(d3.svg.symbolTypes[3])();}
           	 })
           .style("fill", function(d) { 
-            if(d.Gender=="Male" || d.Gender==1)
-            {
-              //console.log(d.Cohort)
-              return "#af8dc3";
-            }
-            else if(d.Gender=="Female" || d.Gender==2)
-            {
-              return "#7fbf7b";
-            }
+                if(d.Gender=="Male" || d.Gender==1)
+                {
+                  //console.log(d.Cohort)
+                  return "#af8dc3";
+                }
+                else if(d.Gender=="Female" || d.Gender==2)
+                {
+                  return "#7fbf7b";
+                }
           })
           .style("opacity", function(d){
             if(UICbuttonFlag==1 && T0buttonFlag==1 && N0buttonFlag==1 && CCbuttonFlag==1){
@@ -6585,7 +6520,12 @@ function UICScatterPlot(container){
 
             else{return 1;}
           })
-          .style("stroke", "black")
+          .style("stroke", function(d){
+            if(d.Dead==1){
+                return "#d94801";
+            }
+            else{return "black";}
+          })
           .style("stroke-width", 1)   
           .on("mouseover", function(d) {
               if(d.HPV_Positive==1)
@@ -6753,7 +6693,11 @@ function UICScatterPlot(container){
           .attr("y", 45)
           .attr("width", 12)
           .attr("height", 12)
-          .style("fill", function(d) { return d;});
+          .style("fill", function(d) { return d;})
+          .style("stroke", function(d,i){
+            if(i==2){return "#d94801"}
+            else{return "#000000"}
+          });
 
       // draw legend text
       legendScatter.append("text")
@@ -6983,7 +6927,7 @@ function rod_knot(container, zipcode, stage){
 
         var innerWidth = window.innerWidth;
         var innerHeight = window.innerHeight;
-        console.log(innerWidth, innerHeight)
+        //console.log(innerWidth, innerHeight)
 
         if(innerWidth<1300 || innerHeight<700){
             var XscaleT = d3.scale.ordinal()
@@ -7388,31 +7332,82 @@ var CCbuttonFlag = 0;
 var ICCCbuttonFlag = 0;
 var RadbuttonFlag = 0;
 var ICRadbuttonFlag = 0;
+var KNNbuttonFlag = 0;
 
 
 function Apply(){
     UICScatterPlot("#UICScatterplot");
+    // $("#ClusteringButton2").hide()
+}
+
+function KNNButton(){
+    if(KNNbuttonFlag==0){
+        KNNbuttonFlag = 1;
+
+
+        //UIC Dropdown start
+        d3.csv('data/UIC.csv', function (patientdata){
+            var UICpID = [];
+            for(var i=0;i<patientdata.length;i++)
+            {
+                UICpID.push(patientdata[i].record_id);
+            }
+             var dropdownChange = function() {
+                var patientID = d3.select(this).property('value');
+                KNNalgo(patientID);
+
+            };
+            var dropdown = d3.select("#UICdropdown1")
+                .append('g')
+                .attr("width", 5)
+                .attr("height", 5)
+                .attr("class","dropdown")
+                .attr("id", "dropdownID")
+                .attr("transform", "translate(-100,100)")
+                .insert("select", "svg")
+                .on("change", dropdownChange);
+
+            dropdown.selectAll("option")
+                .data(UICpID)
+                .enter().append("option")
+                .attr("value", function (d) {return d; })
+                .text(function (d) {
+                    return "UIC Patient " +d;
+                });
+        })
+        //UIC Dropdown ends
+        $("#ClusteringButton1").hide();
+        $("#ClusteringButton2").hide();
+
+    }
+    else{
+        KNNbuttonFlag = 0;
+        $(".dropdown").hide();
+        $("#ClusteringButton1").show();
+        $("#ClusteringButton2").show();
+
+        UICScatterPlot("#UICScatterplot")
+    }
+
 }
 
 function UICButton(){
     if(UICbuttonFlag==0){
         //ButtonRemove()
-        d3.selectAll("#UICscatterButton")
-            .style("background-color", "#a1d99b");
+        // d3.selectAll("#UICscatterButton")
+        //     .style("background-color", "#a1d99b");
         UICbuttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
     else if(UICbuttonFlag==1){
         ButtonRemove()
         UICScatterPlot("#UICScatterplot")
+        // console.log("uic button remove")
     }
 }
 
 function MDACCButton(){
     if(MDACCbuttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#MDACCscatterButton")
-            .style("background-color", "#a1d99b");
         MDACCbuttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7424,9 +7419,6 @@ function MDACCButton(){
 
 function T0Button(){
     if(T0buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#T0scatterButton")
-            .style("background-color", "#a1d99b");
         T0buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7435,9 +7427,6 @@ function T0Button(){
 
 function T1Button(){
     if(T1buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#T1scatterButton")
-            .style("background-color", "#a1d99b");
         T1buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7445,9 +7434,6 @@ function T1Button(){
 
 function T2Button(){
     if(T2buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#T2scatterButton")
-            .style("background-color", "#a1d99b");
         T2buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7455,9 +7441,6 @@ function T2Button(){
 
 function T3Button(){
     if(T3buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#T3scatterButton")
-            .style("background-color", "#a1d99b");
         T3buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7465,9 +7448,6 @@ function T3Button(){
 
 function T4Button(){
     if(T4buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#T4scatterButton")
-            .style("background-color", "#a1d99b");
         T4buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7475,9 +7455,6 @@ function T4Button(){
 
 function N0Button(){
     if(N0buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#N0scatterButton")
-            .style("background-color", "#a1d99b");
         N0buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7485,9 +7462,6 @@ function N0Button(){
 
 function N1Button(){
     if(N1buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#N1scatterButton")
-            .style("background-color", "#a1d99b");
         N1buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7495,9 +7469,6 @@ function N1Button(){
 
 function N2Button(){
     if(N2buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#N2scatterButton")
-            .style("background-color", "#a1d99b");
         N2buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7505,9 +7476,6 @@ function N2Button(){
 
 function N3Button(){
     if(N3buttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#N3scatterButton")
-            .style("background-color", "#a1d99b");
         N3buttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7515,9 +7483,6 @@ function N3Button(){
 
 function CCButton(){
     if(CCbuttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#CCscatterButton")
-            .style("background-color", "#a1d99b");
         CCbuttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7526,9 +7491,6 @@ function CCButton(){
 
 function ICCCButton(){
     if(ICCCbuttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#ICCCscatterButton")
-            .style("background-color", "#a1d99b");
         ICCCbuttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7536,9 +7498,6 @@ function ICCCButton(){
 
 function RadButton(){
     if(RadbuttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#RadscatterButton")
-            .style("background-color", "#a1d99b");
         RadbuttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7546,9 +7505,6 @@ function RadButton(){
 
 function ICRadButton(){
     if(ICRadbuttonFlag==0){
-        //ButtonRemove()
-        d3.selectAll("#ICRadscatterButton")
-            .style("background-color", "#a1d99b");
         ICRadbuttonFlag = 1;
         //UICScatterPlot("#UICScatterplot")
     }
@@ -7557,53 +7513,409 @@ function ICRadButton(){
 function ButtonRemove()
 {
     UICbuttonFlag = 0;
-    d3.selectAll("#UICscatterButton").style("background-color", "#FFFFFF")
+    $("#UICscatterButton").prop("checked",false);
+    // d3.selectAll("#UICscatterButton").style("background-color", "#FFFFFF")
 
     MDACCbuttonFlag = 0;
-    d3.selectAll("#MDACCscatterButton").style("background-color", "#FFFFFF")
+    $("#MDACCscatterButton").prop("checked",false);
 
     T0buttonFlag = 0;
-    d3.selectAll("#T0scatterButton").style("background-color", "#FFFFFF")
+    $("#T0scatterButton").prop("checked",false);
 
     T1buttonFlag = 0;
-    d3.selectAll("#T1scatterButton").style("background-color", "#FFFFFF")
+    $("#T1scatterButton").prop("checked",false);
 
     T2buttonFlag = 0;
-    d3.selectAll("#T2scatterButton").style("background-color", "#FFFFFF")
+    $("#T2scatterButton").prop("checked",false);
 
     T3buttonFlag = 0;
-    d3.selectAll("#T3scatterButton").style("background-color", "#FFFFFF")
+    $("#T3scatterButton").prop("checked",false);
 
     T4buttonFlag = 0;
-    d3.selectAll("#T4scatterButton").style("background-color", "#FFFFFF")
+    $("#T4scatterButton").prop("checked",false);
 
 
     N0buttonFlag = 0;
-    d3.selectAll("#N0scatterButton").style("background-color", "#FFFFFF")
+    $("#N0scatterButton").prop("checked",false);
 
     N1buttonFlag = 0;
-    d3.selectAll("#N1scatterButton").style("background-color", "#FFFFFF")
+    $("#N1scatterButton").prop("checked",false);
 
     N2buttonFlag = 0;
-    d3.selectAll("#N2scatterButton").style("background-color", "#FFFFFF")
+    $("#N2scatterButton").prop("checked",false);
 
     N3buttonFlag = 0;
-    d3.selectAll("#N3scatterButton").style("background-color", "#FFFFFF")
+    $("#N3scatterButton").prop("checked",false);
 
 
     CCbuttonFlag = 0;
-    d3.selectAll("#CCscatterButton").style("background-color", "#FFFFFF")
+    $("#CCscatterButton").prop("checked",false);
 
     ICCCbuttonFlag = 0;
-    d3.selectAll("#ICCCscatterButton").style("background-color", "#FFFFFF")
+    $("#ICCCscatterButton").prop("checked",false);
 
     RadbuttonFlag = 0;
-    d3.selectAll("#RadscatterButton").style("background-color", "#FFFFFF")
+    $("#RadscatterButton").prop("checked",false);
 
     ICRadbuttonFlag = 0;
-    d3.selectAll("#ICRadscatterButton").style("background-color", "#FFFFFF")
+    $("#ICRadscatterButton").prop("checked",false);
 
 
 }
 //ScatterPlot Buttons functions end
+
+
+// var Tounge=0, Buccal=0, FOM=0, RMT=0, hard_palate=0;
+
+function KNNalgo(id){
+
+    var UICPIDselect = id;
+    // var Tounge, Buccal, FOM, RMT, hard_palate;
+    d3.csv('data/Numeric1 UIC.csv', function(data){
+        var Tonsil=0, BOT=0, NOS=0, Soft_palate=0,T_cat=0,N_cat=0, male=0,female=0;
+        var DistArray = [];
+        var sortDistance = [];
+        var TopFive = [];
+        var KNNPatientData = [];
+        for(var i=0; i<data.length; i++){
+            if(data[i].record_id==UICPIDselect){
+                Tonsil = data[i].oropharynx_tonsil;
+                BOT = data[i].oropharynx_BOT;
+                NOS = data[i].oropharynx_not_specified;
+                Soft_palate = data[i].oropharynx_soft_palate;
+                T_cat = data[i].T_category;
+                N_cat = data[i].N_category;
+                male = data[i].Male;
+                female = data[i].Female;
+                KNNPatientData.push({"Gender": data[i].Gender, "T_category": data[i].T_category, "N_category": data[i].N_category, "HPV": data[i].HPV, "Treatment": data[i].Therapeutic,
+                    "OS": data[i].Overall_Survival, "Age": data[i].age_diagnosed, "Cohort": "UIC", "Race White": data[i].Race_White, "Race Black": data[i].Race_Black, "Race Hispanic": data[i].Race_Hispanic, "Race Asian": data[i].Race_Asian,
+                        "Race NOS": data[i].Race_NOS, "HPV Positive": data[i].HPV_Positive, "HPV Negative": data[i].HPV_Negative, "HPV Unknown": data[i].HPV_Unknown})
+                // Tounge = data[i].oral_tongue;
+                // Buccal = data[i].buccal;
+                // FOM = data[i].FOM;
+                // RMT = data[i].RMT;
+                // hard_palate = data[i].hard_palate;
+            }
+        }
+        d3.csv('data/Numeric3 MDACC.csv', function(MDACCdata){
+            for(var i=0;i<MDACCdata.length; i++){
+                // var distance = Math.sqrt(Math.pow(Tounge - MDACCdata[i].tongue_site, 2) + Math.pow(Buccal - MDACCdata[i].Buccal, 2) + Math.pow(FOM - MDACCdata[i].FOM, 2) + Math.pow(RMT - MDACCdata[i].RMT, 2) + Math.pow(hard_palate - MDACCdata[i].hard_palate, 2));
+                var distance = Math.sqrt(Math.pow(Tonsil - MDACCdata[i].Tonsil, 2) + Math.pow(BOT - MDACCdata[i].BOT, 2) + Math.pow(NOS - MDACCdata[i].NOS, 2) + Math.pow(Soft_palate - MDACCdata[i].Soft_palate, 2)
+                + Math.pow(T_cat - MDACCdata[i].T_category, 2) + Math.pow(N_cat - MDACCdata[i].N_category, 2) + Math.pow(male - MDACCdata[i].Male, 2) + Math.pow(female - MDACCdata[i].Female, 2));
+                DistArray.push({"ID": MDACCdata[i].Dummy_ID, "Distance": distance});
+            }
+            sortDistance = DistArray.slice().sort((a, b) => d3.ascending(a.Distance, b.Distance))
+            for(var i=0;i<5;i++){
+                TopFive[i] = sortDistance[i]
+            }
+            for(var i=0;i<MDACCdata.length;i++){
+                for(var j=0;j<5;j++){
+                    if(MDACCdata[i].Dummy_ID==TopFive[j].ID){
+                        KNNPatientData.push({"Gender": MDACCdata[i].Gender, "T_category": MDACCdata[i].T_category, "N_category": MDACCdata[i].N_category, "HPV": MDACCdata[i].HPV, "Treatment": MDACCdata[i].Therapeutic,
+                        "OS": MDACCdata[i].OS, "Age": MDACCdata[i].Age_Diagnosis, "Cohort": "MDACC", "Race White": MDACCdata[i].Race_White, "Race Black": MDACCdata[i].Race_Black, "Race Hispanic": MDACCdata[i].Race_Hispanic, "Race Asian": MDACCdata[i].Race_Asian,
+                        "Race NOS": MDACCdata[i].Race_NOS, "HPV Positive": MDACCdata[i].HPV_Positive, "HPV Negative": MDACCdata[i].HPV_Negative, "HPV Unknown": MDACCdata[i].HPV_Unknown})
+                    }
+                }
+            }
+            // console.log(KNNPatientData)
+            KNNScatterplot("#UICScatterplot", KNNPatientData)
+        })
+    })
+
+}
+
+
+function KNNScatterplot(container, data){
+    d3.selectAll("#UICScatterplot").selectAll('.ClusteringScatterPlot').remove();
+    d3.selectAll("#UICScatterplot").selectAll('.x axis').remove();
+    d3.selectAll("#UICScatterplot").selectAll('.y axis').remove();
+    d3.selectAll("#UICScatterplot").selectAll('.point').remove();
+    d3.selectAll("#UICScatterplot").selectAll('.legendScatter').remove();
+    d3.selectAll("#UICScatterplot").selectAll('.legendScatter1').remove();
+    d3.selectAll("#UICScatterplot").selectAll('.legendMaleFemale').remove();
+
+    var margin = {top: 20, right: 10, bottom: 22, left: 5},
+    width = $(container).width() - margin.left - margin.right-15,
+    height = $(container).height() - margin.top - margin.bottom;
+
+   var xValue = function(d) { return d.Age;}, // data -> value
+    xScale = d3.scale.linear().domain([0,100]).range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+// setup y
+    var yValue = function(d) { return d["OS"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+// setup fill color
+    var legendText = ["Male", "Female", "Dead"];
+    var LegendColor = ["#af8dc3", "#7fbf7b", "#FFFFFF"];
+    var CohortText = ["UIC", "MDACC"];
+    var Cohort2 = ["MDACC"]
+    var Cohort1 = ["UIC"]
+    var TcatText = ["T1", "T2", "T3", "T4"];
+    var NcatText = ["N1", "N2", "N3", "N4"];
+
+    var UICScatterPlot = d3.select(container)
+        .append("svg")
+        .attr("width", $(container).width())
+        .attr("height", $(container).height())
+        .attr("class", "ClusteringScatterPlot")
+        .append("g")
+        .attr("transform", "translate(30,5)");
+
+     data.forEach(function(d) {
+        d.Age = +d.Age;
+        d["OS"] = +d["OS"];
+    //    console.log(d);
+      });
+
+      // don't want dots overlapping axis, so add in buffer to data domain
+      // xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+      yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+
+        var tooltipScatterlot = d3.select("#tooltip_ClusteringScatterPlot")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+      // x-axis
+      var x_axis = UICScatterPlot.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(-10," + height + ")")
+          .call(xAxis)
+          .append("text")
+          .attr("class", "label")
+          .attr("x", width-width/3)
+          .attr("y", 25)
+          .style("text-anchor", "end")
+          .text("Age at Diagnosis (years)");
+
+      // y-axis
+      axis = width-795;
+      var y_axis = UICScatterPlot.append("g")
+          .attr("class", "y axis")
+          
+          .call(yAxis)
+          .append("text")
+          .attr("class", "label")
+          .attr("transform", "rotate(-90)")
+          .attr("x", -3)
+          .attr("y", 15)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text("Overall Survival (number of months)");
+
+      // draw dots
+      UICScatterPlot.selectAll(".point")
+          .data(data)
+          .enter().append("path")
+          .attr("class", "point")
+          .attr("d", function(d,i) {
+          if(i==0){return d3.svg.symbol()
+            .size(130)
+            .type(d3.svg.symbolTypes[0])();} 
+          else{return d3.svg.symbol()
+            .size(130)
+            .type(d3.svg.symbolTypes[3])();}
+             })
+          .style("fill", function(d) { 
+            if(d.Gender=="Male" || d.Gender==1)
+            {
+              //console.log(d.Cohort)
+              return "#af8dc3";
+            }
+            else if(d.Gender=="Female" || d.Gender==2)
+            {
+              return "#7fbf7b";
+            }
+          })
+          .style("stroke", "black")
+          .style("stroke-width", 1)   
+          .on("mouseover", function(d) {
+              if(d.HPV_Positive==1)
+              {
+                var HPV = "Positive";
+              }
+              else if(d.HPV_Negative==1)
+              {
+                var HPV = "Negative";
+              }
+              else if(d.HPV_Unknown==1)
+              {
+                var HPV = "Unknown";
+              }
+
+              if(d.feeding==1)
+              {
+                var Feeding_tube = "Yes";
+              }
+              else if(d.feeding==0)
+              {
+                var Feeding_tube = "No";
+              }
+              else if(d.feeding==100)
+              {
+                var Feeding_tube = "Unknown";
+              }
+
+              if(d.Gender==1 || d.Gender== "Male")
+              {
+                var gender = "Male";
+              }
+              else if(d.Gender==2 || d.Gender== "Female")
+              {
+                var gender = "Female";
+              }
+
+              if(d.CC==1)
+              {
+                var Therapeutic = "CC";
+              }
+              else if(d.Radiation_alone==1)
+              {
+                var Therapeutic = "Radiation alone";
+              }
+              else if(d.IC_CC==1)
+              {
+                var Therapeutic = "IC+CC";
+              }
+              else if(d.IC_Radiation_alone==1)
+              {
+                var Therapeutic = "IC+Radiation alone";
+              }
+              else{var Therapeutic = "Unknown"}
+
+              if(d.Race_White==1)
+              {
+                var Race = "White";
+              }
+              else if(d.Race_Black==1)
+              {
+                var Race = "Black";
+              }
+              else if(d.Race_Hispanic==1)
+              {
+                var Race = "Hispanic";
+              }
+              else if(d.Race_Asian==1)
+              {
+                var Race = "Asia";
+              }
+              else if(d.Race_NOS==1)
+              {
+                var Race = "Others";
+              }
+              tooltipScatterlot.transition()
+                   .duration(200)
+                   .style("opacity", .9);
+              tooltipScatterlot.html("Gender: " + gender + "<br/>" +
+                            "Race: "  + Race + "<br/>" +
+                            "T-category: T"  + d.T_category + "<br/>" +
+                            "N-category: N"  + d.N_category + "<br/>" +
+                            "HPV: "  + HPV + "<br/>" +
+                            "Treatment: "  + Therapeutic + "<br/>" +
+                            "Feeding Tube:"  + Feeding_tube + "<br/>")
+                   .style("left", (d3.event.pageX + 5) + "px")
+                   .style("top", (d3.event.pageY - 28) + "px");
+          })
+          .on("mouseout", function(d) {
+              tooltipScatterlot.transition()
+                   .duration(500)
+                   .style("opacity", 0);
+          })
+          .attr("transform", function(d) {
+            a = d.Age
+            b = d["OS"]
+            if(a == "nan" || b == "nan")
+            {
+                a = 0;
+                b = 0;
+            }
+            return "translate(" + xScale(a) + "," + yScale(b) + ")"; 
+          });
+
+          //Cohort legend
+      var legendScatterCohort1 = UICScatterPlot.selectAll(".legendScatter")
+        .data(Cohort1)
+        .enter()
+          .append("g")
+          .attr("class", "legendScatter")
+          .attr("transform", function(d, i) { return "translate(-15," + i * 20 + ")"; });
+
+      legendScatterCohort1.append("circle")
+          .attr("r", 5)
+          .attr("cx", width-13)
+          .attr("cy", 8)
+          .style("fill", "#000000");
+      // draw legend text
+      legendScatterCohort1.append("text")
+          .data(Cohort1)
+          .attr("x", width - 24)
+          .attr("y", 10)
+          .attr("dy", ".20em")
+          .style("text-anchor", "end")
+          .style("font",'0.6vw sans-serif')
+          .text(function(d) { return d;})
+
+      var legendScatterCohort2 = UICScatterPlot.selectAll(".legendScatter1")
+          .data(Cohort2)
+          .enter().append("g")
+          .attr("class", "legendScatter1")
+          .attr("transform", function(d, i) { return "translate(-15," + (i * 20) + ")"; });
+
+      // draw legend colored rectangles
+      legendScatterCohort2.append("rect")
+          .attr("x", width - 18)
+          .attr("y", 20)
+          .attr("width", 12)
+          .attr("height", 12)
+          .style("fill", "#000000");
+
+      // draw legend text
+      legendScatterCohort2.append("text")
+          .data(Cohort2)
+          .attr("x", width - 24)
+          .attr("y", 25)
+          .attr("dy", ".20em")
+          .style("text-anchor", "end")
+          .style("font",'0.6vw sans-serif')
+          .text(function(d) { return d;})
+
+
+      //Male Female legend
+      var legendScatter = UICScatterPlot.selectAll(".legendMaleFemale")
+          .data(LegendColor)
+          .enter().append("g")
+          .attr("class", "legendMaleFemale")
+          .attr("transform", function(d, i) { return "translate(-15," + (i * 20) + ")"; });
+
+      // draw legend colored rectangles
+      legendScatter.append("rect")
+          .attr("x", width - 18)
+          .attr("y", 45)
+          .attr("width", 12)
+          .attr("height", 12)
+          .style("fill", function(d) { return d;})
+          .style("stroke", function(d,i){
+            if(i==2){return "#d94801"}
+            else{return "#000000"}
+          });
+
+      // draw legend text
+      legendScatter.append("text")
+          .data(legendText)
+          .attr("x", width - 24)
+          .attr("y", 50)
+          .attr("dy", ".30em")
+          .style("text-anchor", "end")
+          .style("font",'0.6vw sans-serif')
+          .text(function(d) { return d;})
+
+
+
+
+
+}
 
