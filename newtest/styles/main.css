@@ -1,0 +1,598 @@
+/*flexbox style*/
+
+:root {
+    --gradient: linear-gradient(to bottom, #b8b8b8 0%, #858585 100%);
+    --gradient-light: linear-gradient(to bottom, #b4e8f8 0%, #cbd3f0 100%);
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    background-color: #f7f7f7;
+    height: 100%;
+    padding: 0;
+}
+
+.grid-item{
+    display: grid;
+    grid-template-rows: 10% 30% 30% 4% 2% 24%;
+    grid-template-columns: 10% 64% 2% 24%;
+    background-color: white;
+    height: 100%;
+    padding: 0;
+}
+
+
+
+#map-heading{
+    grid-column: 1/5;
+    grid-row: 1/2;
+}
+
+#sidebar-right1{
+    grid-column: 3/5;
+    grid-row: 2/3;
+}
+#sidebar-right2{
+    grid-column: 3/5;
+    grid-row: 3/4;
+}
+
+#map-layer{
+    grid-column: 1/3;
+    grid-row: 2/4;
+}
+
+#DemoZipHeading{
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+
+#DemoZip{
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+#DemoZip1{
+    grid-column: 2/4;
+    grid-row: 5/6;
+}
+
+#DemoZipAxis{
+    grid-column: 1/2;
+    grid-row: 5/7;
+}
+
+#DemoLegend{
+    grid-column: 4/5;
+    grid-row: 4/7;
+}
+
+
+/*Detail panels grid arrangements*/
+#details-panel {
+    display: grid;
+    grid-template-columns: 50% 5% 7% 6% 30%;
+    grid-template-rows: 4% 14% 4% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 7%;
+    background-color: white;
+    box-shadow: -2px 0px 20px -5px #7a7a7a;
+    height: 100%;
+}
+
+#UICMDACCcompariosnHeading{
+    grid-column: 5/6;
+    grid-row: 3/4;
+}
+
+#UICHeading1{
+    grid-column: 4/5;
+    grid-row: 4/5;
+}
+#UICHeading2{
+    grid-column: 4/5;
+    grid-row: 7/8;
+}
+#UICHeading3{
+    grid-column: 4/5;
+    grid-row: 10/11;
+}
+#UICHeading4{
+    grid-column: 4/5;
+    grid-row: 13/14;
+}
+#UICHeading5{
+    grid-column: 4/5;
+    grid-row: 16/17;
+}
+#UICHeading6{
+    grid-column: 4/5;
+    grid-row: 19/20;
+}
+#UICHeading7{
+    grid-column: 4/5;
+    grid-row: 22/23;
+}
+#UICHeading8{
+    grid-column: 4/5;
+    grid-row: 25/26;
+}
+
+#MDACCHeading1{
+    grid-column: 4/5;
+    grid-row: 5/6;
+}
+#MDACCHeading2{
+    grid-column: 4/5;
+    grid-row: 8/9;
+}
+#MDACCHeading3{
+    grid-column: 4/5;
+    grid-row: 11/12;
+}
+#MDACCHeading4{
+    grid-column: 4/5;
+    grid-row: 14/15;
+}
+#MDACCHeading5{
+    grid-column: 4/5;
+    grid-row: 17/18;
+}
+#MDACCHeading6{
+    grid-column: 4/5;
+    grid-row: 20/21;
+}
+#MDACCHeading7{
+    grid-column: 4/5;
+    grid-row: 23/24;
+}
+#MDACCHeading8{
+    grid-column: 4/5;
+    grid-row: 26/27;
+}
+
+#gender{
+    grid-column: 3/4;
+    grid-row: 4/6;
+}
+
+#race{
+    grid-column: 3/4;
+    grid-row: 7/9;
+}
+
+#tcat{
+    grid-column: 3/4;
+    grid-row: 10/12;
+}
+
+#ncat{
+    grid-column: 3/4;
+    grid-row: 13/15;
+}
+
+#hpv{
+    grid-column: 3/4;
+    grid-row: 16/18;
+}
+
+#feeding{
+    grid-column: 3/4;
+    grid-row: 19/21;
+}
+
+#survival{
+    grid-column: 3/4;
+    grid-row: 22/24;
+}
+
+#treatment{
+    grid-column: 3/4;
+    grid-row: 25/27;
+}
+
+#UICgender{
+    grid-column: 5/6;
+    grid-row: 4/5;
+}
+
+#UICrace{
+    grid-column: 5/6;
+    grid-row: 7/8;
+}
+
+#UICtcat{
+    grid-column: 5/6;
+    grid-row: 10/11;
+}
+
+#UICncat{
+    grid-column: 5/6;
+    grid-row: 13/14;
+}
+#UIChpv{
+    grid-column: 5/6;
+    grid-row: 16/17;
+}
+#UICfeeding{
+    grid-column: 5/6;
+    grid-row: 19/20;
+}
+#UICsurvival{
+    grid-column: 5/6;
+    grid-row: 22/23;
+}
+#UICtreatment{
+    grid-column: 5/6;
+    grid-row: 25/26;
+}
+
+#MDACCgender{
+    grid-column: 5/6;
+    grid-row: 5/6;
+}
+#MDACCrace{
+    grid-column: 5/6;
+    grid-row: 8/9;
+}
+#MDACCtcat{
+    grid-column: 5/6;
+    grid-row: 11/12;
+}
+#MDACCncat{
+    grid-column: 5/6;
+    grid-row: 14/15;
+}
+#MDACChpv{
+    grid-column: 5/6;
+    grid-row: 17/18;
+}
+#MDACCfeeding{
+    grid-column: 5/6;
+    grid-row: 20/21;
+}
+#MDACCsurvival{
+    grid-column: 5/6;
+    grid-row: 23/24;
+}
+#MDACCtreatment{
+    grid-column: 5/6;
+    grid-row: 26/27;
+}
+
+#ClusteringHeading{
+    grid-column: 1/2;
+    grid-row: 11/12;
+}
+#RaceLegendandPatientLegend{
+    grid-column: 5/6;
+    grid-row: 27/28;
+}
+
+#ClusteringButton1{
+    grid-column: 1/2;
+    grid-row: 13/14;
+}
+
+#ClusteringButton2{
+    grid-column: 1/2;
+    grid-row: 14/15;
+}
+
+#ApplyButton{
+    grid-column: 1/2;
+    grid-row: 15/17;
+}
+
+#UICScatterplot{
+    grid-column: 1/3;
+    grid-row: 17/28;
+}
+
+#TNMStageC{
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+
+#TNMStageP{
+    grid-column: 1/2;
+    grid-row: 5/11;
+}
+
+#TNMStageCMDACC{
+    grid-column: 2/6;
+    grid-row: 2/3;
+}
+
+#TNMHeadingCUIC{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#TNMHeadingPUIC{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+#TNMHeadingCMDACC{
+    grid-column: 2/6;
+    grid-row: 1/2;
+}
+
+/*#MDACCScatterplot{
+    grid-column: 4/6;
+    grid-row: 18/24;
+}*/
+/*#zipHeading1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#totalPopulation1{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+
+#cancerPlots1{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+#incomePlot1{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+#groceryNumber1{
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+
+#insurancePlot1{
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+
+#raceHeading1{
+    grid-column: 3/6;
+    grid-row: 2/3;
+}
+
+#racePlot1{
+    grid-column: 4/5;
+    grid-row: 3/7;
+}
+
+#raceLabel1{
+    grid-column: 3/4;
+    grid-row: 3/7;
+}
+
+#educationPlot1{
+    grid-column: 1/2;
+    grid-row: 7/8;
+}*/
+
+
+
+/*zip 2 detail container space start*/
+/*#zipHeading2{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#totalPopulation2{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+
+
+#cancerPlots2{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#incomePlot2{
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+#groceryNumber2{
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+#insurancePlot2{
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+#racePlot2{
+    grid-column: 5/6;
+    grid-row: 3/7;
+}
+
+#educationPlot2{
+    grid-column: 2/3;
+    grid-row: 7/8;
+}*/
+/*zip 2 detail container style space end*/
+
+
+/*zip 1 detail container after selecting compare start */
+/*#zipHeading1.compare{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+#cancerPlots1.compare{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+#incomePlot1.compare{
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+
+#groceryNumber1.compare{
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+
+#insurancePlot1.compare{
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+#racePlot1.compare{
+    grid-column: 1/3;
+    grid-row: 7/8;
+}
+
+#educationPlot1.compare{
+    grid-column: 1/3;
+    grid-row: 9/10;
+}*/
+/*zip 1 detail container after selecting compare end*/
+
+
+/*Detail panels grid arrangements end*/
+
+#heading {
+    margin-left: 0;
+}
+
+#cancerFilter {
+    margin-left: 25%
+}
+
+
+/*map styles*/
+.map {
+    width: 100%;
+    /*height: 100%;*/
+    background-color: white;
+}
+#map-heading {
+    fill: #212529;
+    /*font-size: 48px;*/
+    font-family: 'Signika', sans-serif;
+
+    text-align: center;
+    margin: auto;
+}
+
+.map-layer {
+    background-color: white;
+    stroke: #aaa;
+}
+
+#sidebar-right1{
+    background-color: white;
+}
+#sidebar-right2{
+    background-color: white;
+}
+
+.sidebar-slider-heading{
+
+    /*margin: auto;*/
+    margin-left: 17px;
+    margin-top: 10px;
+}
+
+.slider-name{
+    margin: auto;
+}
+
+.slider{
+    width: 100px;
+}
+
+
+.legend {
+    position:absolute;
+    left:20px;
+    top:30px;
+}
+
+.yaxis {
+    font: 10px sans-serif;
+}
+/*map styles ends*/
+
+/*sidebar styles*/
+.sidebar{
+    background-image: var(--gradient);
+}
+
+/*sidebar style end*/
+
+.education-path {
+    pointer-events: none;
+}
+
+
+.cancertype{
+    pointer-events: none;
+}
+
+
+.axis line,
+.axis path {
+    shape-rendering: auto;
+    fill: transparent;
+    stroke: #555;
+}
+.axis text {
+    font-size: 11px;
+}
+
+
+.bar {
+    fill-opacity: 0.5;
+}
+.bar.left {
+    fill: steelblue;
+}
+.bar.right {
+    fill: firebrick;
+}
+.incomeChart{
+    display: block;
+    margin: auto;
+}
+
+
+.insuranceChart{
+    display: block;
+    margin: auto;
+}
+
+.buttonDisabled {
+  pointer-events: none;
+  background-color: white;
+  border-width: thin;
+} 
+
+/*@media screen and (max-width: 1200px) {
+  div.LegendMarginText {
+    svg{
+         width: 5px;
+        height: 5px;
+    }
+    font-size: 5px;
+  }
+}
+div.LegendMarginText {
+    svg-container { 
+    display: inline-block;
+    position: relative;
+    width: auto;
+    padding-bottom: 100%; 
+    vertical-align: middle; 
+    overflow: hidden; 
+}
+  }*/
