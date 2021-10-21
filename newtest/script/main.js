@@ -1459,8 +1459,8 @@ function EducationRemove(){
                 else{
                     var xHeightWidth = 40;
                     var EduTextySpace = 20;
-                    var EduTextxSpace = -50;//50//55
-                    var eduX = -55;//55//63
+                    var EduTextxSpace = -55;//50//55
+                    var eduX = -63;//55//63
                     var eduY = 80;
                 }
 
@@ -1477,7 +1477,7 @@ function EducationRemove(){
                     .attr("class","eduIncome-legend-heading")
                     .append('text')
                     .attr("x",xHeightWidth)
-                    .attr("y",3*xHeightWidth+25)//25//30
+                    .attr("y",3*xHeightWidth+30)//25//30
                     .style("font" ,"0.6vw sans-serif")
                     .text('Income');
 
@@ -2608,7 +2608,7 @@ function DemoAxis(container){
 
         DemoAxis.append("text")
                 .attr("y", "65%")
-                .attr("x", -5)//-5//-7
+                .attr("x", -7)//-5//-7
                 .attr("dy", ".40em")
                 .style("text-anchor", "start")
                 .style("font",'0.6vw sans-serif')
@@ -7746,28 +7746,28 @@ function KNNalgo(id){
                 //  + Math.pow(RaceWhite - AgeSortData[i].Race_White, 2) + Math.pow(RaceBlack - AgeSortData[i].Race_Black, 2) + Math.pow(RaceHispanic - AgeSortData[i].Race_Hispanic, 2) + Math.pow(RaceAsian - AgeSortData[i].Race_Asian, 2)
                 //   + Math.pow(RaceNOS - AgeSortData[i].Race_NOS, 2) + Math.pow(HPVpos - AgeSortData[i].HPV_Positive, 2) + Math.pow(HPVneg - AgeSortData[i].HPV_Negative, 2));
 
-                if(Tonsil!=AgeSortData[i].Tonsil){distance1++};
-                if(BOT!=AgeSortData[i].BOT){distance1++};
-                if(NOS!=AgeSortData[i].NOS){distance1++};
-                if(Soft_palate!=AgeSortData[i].Soft_palate){distance1++};
-                if(T0_cat!=MT0_cat){distance1++};
-                if(T1_cat!=MT1_cat){distance1++};
-                if(T2_cat!=MT2_cat){distance1++};
-                if(T3_cat!=MT3_cat){distance1++};
-                if(T4_cat!=MT4_cat){distance1++};
-                if(N0_cat!=MN0_cat){distance1++};
-                if(N1_cat!=MN1_cat){distance1++};
-                if(N2_cat!=MN2_cat){distance1++};
-                if(N3_cat!=MN3_cat){distance1++};
-                if(male!=AgeSortData[i].Male){distance1++};
-                if(female!=AgeSortData[i].Female){distance1++};
-                if(RaceWhite!=AgeSortData[i].Race_White){distance1++};
-                if(RaceBlack!=AgeSortData[i].Race_Black){distance1++};
-                if(RaceHispanic!=AgeSortData[i].Race_Hispanic){distance1++};
-                if(RaceAsian!=AgeSortData[i].Race_Asian){distance1++};
-                if(RaceNOS!=AgeSortData[i].Race_NOS){distance1++};
-                if(HPVpos!=AgeSortData[i].HPV_Positive){distance1++};
-                if(HPVneg!=AgeSortData[i].HPV_Negative){distance1++};
+                if(Tonsil!=AgeSortData[i].Tonsil){console.log("1");distance1++};
+                if(BOT!=AgeSortData[i].BOT){console.log("2");distance1++};
+                if(NOS!=AgeSortData[i].NOS){console.log("3");distance1++};
+                if(Soft_palate!=AgeSortData[i].Soft_palate){console.log("4");distance1++};
+                if(T0_cat!=MT0_cat){console.log("4");distance1++};
+                if(T1_cat!=MT1_cat){console.log("5");distance1++};
+                if(T2_cat!=MT2_cat){console.log("6");distance1++};
+                if(T3_cat!=MT3_cat){console.log("7");distance1++};
+                if(T4_cat!=MT4_cat){console.log("8");distance1++};
+                if(N0_cat!=MN0_cat){console.log("9");distance1++};
+                if(N1_cat!=MN1_cat){console.log("10");distance1++};
+                if(N2_cat!=MN2_cat){console.log("11");distance1++};
+                if(N3_cat!=MN3_cat){console.log("12");distance1++};
+                if(male!=AgeSortData[i].Male){console.log("13");distance1++};
+                if(female!=AgeSortData[i].Female){console.log("14");distance1++};
+                if(RaceWhite!=AgeSortData[i].Race_White){console.log("15");distance1++};
+                if(RaceBlack!=AgeSortData[i].Race_Black){console.log("16");distance1++};
+                if(RaceHispanic!=AgeSortData[i].Race_Hispanic){console.log("17");distance1++};
+                if(RaceAsian!=AgeSortData[i].Race_Asian){console.log("18");distance1++};
+                if(RaceNOS!=AgeSortData[i].Race_NOS){console.log("19");distance1++};
+                if(HPVpos!=AgeSortData[i].HPV_Positive){console.log("20");distance1++};
+                if(HPVneg!=AgeSortData[i].HPV_Negative){console.log("21");distance1++};
 
                 console.log("distance is: "+ distance1)
 
