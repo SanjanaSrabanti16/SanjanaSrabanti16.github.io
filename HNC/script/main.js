@@ -1459,8 +1459,8 @@ function EducationRemove(){
                 else{
                     var xHeightWidth = 40;
                     var EduTextySpace = 20;
-                    var EduTextxSpace = -50;
-                    var eduX = -55;
+                    var EduTextxSpace = -55;//50//55
+                    var eduX = -63;//55//63
                     var eduY = 80;
                 }
 
@@ -1477,7 +1477,7 @@ function EducationRemove(){
                     .attr("class","eduIncome-legend-heading")
                     .append('text')
                     .attr("x",xHeightWidth)
-                    .attr("y",3*xHeightWidth+25)
+                    .attr("y",3*xHeightWidth+30)//25//30
                     .style("font" ,"0.6vw sans-serif")
                     .text('Income');
 
@@ -1529,7 +1529,7 @@ function EducationRemove(){
                         .attr("y", 3*xHeightWidth+10)
                         .attr("dy", ".35em")
                         .style("text-anchor", "start")
-                        .style("font" ,"0.5vw sans-serif")
+                        .style("font" ,"0.4vw sans-serif")
                         .text(String(IncomeText[i]));
                    }
 
@@ -2608,7 +2608,7 @@ function DemoAxis(container){
 
         DemoAxis.append("text")
                 .attr("y", "65%")
-                .attr("x", -5)
+                .attr("x", -7)//-5//-7
                 .attr("dy", ".40em")
                 .style("text-anchor", "start")
                 .style("font",'0.6vw sans-serif')
@@ -2726,11 +2726,11 @@ function raceChart(cohort,container,value) {
         .rangeRound([0, width]);
 
     var color = d3.scale.ordinal()
-        .range(["#80b1d3","#8dd3c7", "#bebada", "#fb8072", "#b3de69", "#fdb462"]);
+        .range(["#80b1d3","#8dd3c7", "#bebada", "#fb8072", "#b3de69", "#fdb462", "#000000"]);
 
 
     var stack = d3.layout.stack();
-    var segmentsStacked = ['White', 'Black', 'American Indian', 'Hispanic', 'Asian', 'Others'];
+    var segmentsStacked = ['White', 'Black', 'American Indian', 'Hispanic', 'Asian', 'Others', 'Race_NAN'];
 
     d3.csv("data/demographicData.csv", function(race) {
 
@@ -2742,7 +2742,7 @@ function raceChart(cohort,container,value) {
 
             if((race[i]["cohort"]) == p){
                 var total = +(race[i]["White"]) + +(race[i]["Black"]) + +(race[i]["American Indian"]) + +(race[i]["Hispanic"]) +
-                 +(race[i]["Asian"]) + +(race[i]["Others"]);
+                 +(race[i]["Asian"]) + +(race[i]["Others"])+ +(race[i]["Race_NAN"]);
 
                 raceOriginalDataZipSelect = race[i];
                 race[i]["White"] = ((+(race[i]["White"])/total) *100).toFixed(2);
@@ -2751,6 +2751,7 @@ function raceChart(cohort,container,value) {
                 race[i]["Hispanic"] = ((+(race[i]["Hispanic"])/total) *100).toFixed(2);
                 race[i]["Asian"] = ((+(race[i]["Asian"])/total) *100).toFixed(2);
                 race[i]["Others"] = ((+(race[i]["Others"])/total) *100).toFixed(2);
+                race[i]["Race_NAN"] = ((+(race[i]["Race_NAN"])/total) *100).toFixed(2);
 
                 raceCount.push(race[i]);
             }
@@ -2775,7 +2776,7 @@ function raceChart(cohort,container,value) {
 
     if(p=='UIC')
     {
-    	xScale.domain([0, 100]).nice();
+    	xScale.domain([0, 96.5]);
     }
     else if(p=='MDACC')
     {
@@ -7587,9 +7588,79 @@ function KNNalgo(id){
                 N_cat = data[i].N_category;
                 male = data[i].Male;
                 female = data[i].Female;
+                RaceWhite = data[i].Race_White;
+                RaceBlack = data[i].Race_Black;
+                RaceHispanic = data[i].Race_Hispanic;
+                RaceAsian = data[i].Race_Asian;
+                RaceNOS = data[i].Race_NOS;
+                HPVpos = data[i].HPV_Positive;
+                HPVneg = data[i].HPV_Negative;
+                UICPage = data[i].age_diagnosed;
+                if(T_cat==0){
+                    T0_cat = 1;
+                    T1_cat = 0;
+                    T2_cat = 0;
+                    T3_cat = 0;
+                    T4_cat = 0;
+                }
+                else if(T_cat==1){
+                    T0_cat = 0;
+                    T1_cat = 1;
+                    T2_cat = 0;
+                    T3_cat = 0;
+                    T4_cat = 0;
+                }
+                else if(T_cat==2){
+                    T0_cat = 0;
+                    T1_cat = 0;
+                    T2_cat = 1;
+                    T3_cat = 0;
+                    T4_cat = 0;
+                }
+                else if(T_cat==3){
+                    T0_cat = 0;
+                    T1_cat = 0;
+                    T2_cat = 0;
+                    T3_cat = 1;
+                    T4_cat = 0;
+                }
+                else if(T_cat==4){
+                    T0_cat = 0;
+                    T1_cat = 0;
+                    T2_cat = 0;
+                    T3_cat = 0;
+                    T4_cat = 1;
+                }
+
+                if(N_cat==0){
+                    N0_cat = 1;
+                    N1_cat = 0;
+                    N2_cat = 0;
+                    N3_cat = 0;
+                }
+                else if(N_cat==1){
+                    N0_cat = 0;
+                    N1_cat = 1;
+                    N2_cat = 0;
+                    N3_cat = 0;
+                }
+                else if(N_cat==2){
+                    N0_cat = 0;
+                    N1_cat = 0;
+                    N2_cat = 1;
+                    N3_cat = 0;
+                }
+                else if(N_cat==3){
+                    N0_cat = 0;
+                    N1_cat = 0;
+                    N2_cat = 0;
+                    N3_cat = 1;
+                }
                 KNNPatientData.push({"Gender": data[i].Gender, "T_category": data[i].T_category, "N_category": data[i].N_category, "HPV": data[i].HPV, "Treatment": data[i].Therapeutic,
-                    "OS": data[i].Overall_Survival, "Age": data[i].age_diagnosed, "Cohort": "UIC", "Race White": data[i].Race_White, "Race Black": data[i].Race_Black, "Race Hispanic": data[i].Race_Hispanic, "Race Asian": data[i].Race_Asian,
-                        "Race NOS": data[i].Race_NOS, "HPV Positive": data[i].HPV_Positive, "HPV Negative": data[i].HPV_Negative, "HPV Unknown": data[i].HPV_Unknown})
+                    "OS": data[i].Overall_Survival, "Age": data[i].age_diagnosed, "Cohort": "UIC", "Race_White": data[i].Race_White, "Race_Black": data[i].Race_Black, "Race_Hispanic": data[i].Race_Hispanic, "Race_Asian": data[i].Race_Asian,
+                        "Race_NOS": data[i].Race_NOS, "HPV_Positive": data[i].HPV_Positive, "HPV_Negative": data[i].HPV_Negative, "HPV_Unknown": data[i].HPV_Unknown, "CC": data[i].CC, "Radiation_alone": data[i].Radiation_alone,
+                        "Feeding_tube": data[i].feeding})
+                // console.log(data[i].feeding)
                 // Tounge = data[i].oral_tongue;
                 // Buccal = data[i].buccal;
                 // FOM = data[i].FOM;
@@ -7597,14 +7668,115 @@ function KNNalgo(id){
                 // hard_palate = data[i].hard_palate;
             }
         }
-        d3.csv('data/Numeric3 MDACC.csv', function(MDACCdata){
+        // console.log(Tonsil,BOT,NOS,Soft_palate,T_cat,T0_cat,T1_cat,T2_cat,T3_cat,T4_cat,N_cat,N0_cat,N1_cat,N2_cat,N3_cat,male,female,RaceWhite,RaceBlack,RaceHispanic,RaceAsian,RaceNOS,HPVpos,HPVneg)
+        AgeSortData = []
+        d3.csv('data/newNumeric3 MDACC.csv', function(MDACCdata){
+            // console.log(MDACCdata)
             for(var i=0;i<MDACCdata.length; i++){
+                if(MDACCdata[i].Age_Diagnosis>=UICPage-4 && MDACCdata[i].Age_Diagnosis<=UICPage+4){
+                    AgeSortData.push(MDACCdata[i]);
+                }
+            }
+            // console.log(AgeSortData)
+            for(var i=0;i<AgeSortData.length; i++){
+                var distance1 = 0;
+                if(AgeSortData[i].T_category==0){
+                    MT0_cat = 1;
+                    MT1_cat = 0;
+                    MT2_cat = 0;
+                    MT3_cat = 0;
+                    MT4_cat = 0;
+                }
+                else if(AgeSortData[i].T_category==1){
+                    MT0_cat = 0;
+                    MT1_cat = 1;
+                    MT2_cat = 0;
+                    MT3_cat = 0;
+                    MT4_cat = 0;
+                }
+                else if(AgeSortData[i].T_category==2){
+                    MT0_cat = 0;
+                    MT1_cat = 0;
+                    MT2_cat = 1;
+                    MT3_cat = 0;
+                    MT4_cat = 0;
+                }
+                else if(AgeSortData[i].T_category==3){
+                    MT0_cat = 0;
+                    MT1_cat = 0;
+                    MT2_cat = 0;
+                    MT3_cat = 1;
+                    MT4_cat = 0;
+                }
+                else if(AgeSortData[i].T_category==4){
+                    MT0_cat = 0;
+                    MT1_cat = 0;
+                    MT2_cat = 0;
+                    MT3_cat = 0;
+                    MT4_cat = 1;
+                }
+
+                if(AgeSortData[i].N_category==0){
+                    MN0_cat = 1;
+                    MN1_cat = 0;
+                    MN2_cat = 0;
+                    MN3_cat = 0;
+                }
+                else if(AgeSortData[i].N_category==1){
+                    MN0_cat = 0;
+                    MN1_cat = 1;
+                    MN2_cat = 0;
+                    MN3_cat = 0;
+                }
+                else if(AgeSortData[i].N_category==2){
+                    MN0_cat = 0;
+                    MN1_cat = 0;
+                    MN2_cat = 1;
+                    MN3_cat = 0;
+                }
+                else if(AgeSortData[i].N_category==3){
+                    MN0_cat = 0;
+                    MN1_cat = 0;
+                    MN2_cat = 0;
+                    MN3_cat = 1;
+                }
                 // var distance = Math.sqrt(Math.pow(Tounge - MDACCdata[i].tongue_site, 2) + Math.pow(Buccal - MDACCdata[i].Buccal, 2) + Math.pow(FOM - MDACCdata[i].FOM, 2) + Math.pow(RMT - MDACCdata[i].RMT, 2) + Math.pow(hard_palate - MDACCdata[i].hard_palate, 2));
-                var distance = Math.sqrt(Math.pow(Tonsil - MDACCdata[i].Tonsil, 2) + Math.pow(BOT - MDACCdata[i].BOT, 2) + Math.pow(NOS - MDACCdata[i].NOS, 2) + Math.pow(Soft_palate - MDACCdata[i].Soft_palate, 2)
-                + Math.pow(T_cat - MDACCdata[i].T_category, 2) + Math.pow(N_cat - MDACCdata[i].N_category, 2) + Math.pow(male - MDACCdata[i].Male, 2) + Math.pow(female - MDACCdata[i].Female, 2));
-                DistArray.push({"ID": MDACCdata[i].Dummy_ID, "Distance": distance});
+                // var distance = Math.sqrt(Math.pow(Tonsil - AgeSortData[i].Tonsil, 2) + Math.pow(BOT - AgeSortData[i].BOT, 2) + Math.pow(NOS - AgeSortData[i].NOS, 2) + Math.pow(Soft_palate - AgeSortData[i].Soft_palate, 2)
+                // + Math.pow(T_cat - AgeSortData[i].T_category, 2) + Math.pow(N_cat - AgeSortData[i].N_category, 2) + Math.pow(male - AgeSortData[i].Male, 2) + Math.pow(female - AgeSortData[i].Female, 2)
+                //  + Math.pow(RaceWhite - AgeSortData[i].Race_White, 2) + Math.pow(RaceBlack - AgeSortData[i].Race_Black, 2) + Math.pow(RaceHispanic - AgeSortData[i].Race_Hispanic, 2) + Math.pow(RaceAsian - AgeSortData[i].Race_Asian, 2)
+                //   + Math.pow(RaceNOS - AgeSortData[i].Race_NOS, 2) + Math.pow(HPVpos - AgeSortData[i].HPV_Positive, 2) + Math.pow(HPVneg - AgeSortData[i].HPV_Negative, 2));
+
+                if(Tonsil!=AgeSortData[i].Tonsil){console.log("1");distance1++};
+                if(BOT!=AgeSortData[i].BOT){console.log("2");distance1++};
+                if(NOS!=AgeSortData[i].NOS){console.log("3");distance1++};
+                if(Soft_palate!=AgeSortData[i].Soft_palate){console.log("4");distance1++};
+                if(T0_cat!=MT0_cat){console.log("4");distance1++};
+                if(T1_cat!=MT1_cat){console.log("5");distance1++};
+                if(T2_cat!=MT2_cat){console.log("6");distance1++};
+                if(T3_cat!=MT3_cat){console.log("7");distance1++};
+                if(T4_cat!=MT4_cat){console.log("8");distance1++};
+                if(N0_cat!=MN0_cat){console.log("9");distance1++};
+                if(N1_cat!=MN1_cat){console.log("10");distance1++};
+                if(N2_cat!=MN2_cat){console.log("11");distance1++};
+                if(N3_cat!=MN3_cat){console.log("12");distance1++};
+                if(male!=AgeSortData[i].Male){console.log("13");distance1++};
+                if(female!=AgeSortData[i].Female){console.log("14");distance1++};
+                if(RaceWhite!=AgeSortData[i].Race_White){console.log("15");distance1++};
+                if(RaceBlack!=AgeSortData[i].Race_Black){console.log("16");distance1++};
+                if(RaceHispanic!=AgeSortData[i].Race_Hispanic){console.log("17");distance1++};
+                if(RaceAsian!=AgeSortData[i].Race_Asian){console.log("18");distance1++};
+                if(RaceNOS!=AgeSortData[i].Race_NOS){console.log("19");distance1++};
+                if(HPVpos!=AgeSortData[i].HPV_Positive){console.log("20");distance1++};
+                if(HPVneg!=AgeSortData[i].HPV_Negative){console.log("21");distance1++};
+
+                console.log("distance is: "+ distance1)
+
+                // if()
+
+                DistArray.push({"ID": AgeSortData[i].Dummy_ID, "Distance": distance1});
             }
             sortDistance = DistArray.slice().sort((a, b) => d3.ascending(a.Distance, b.Distance))
+            console.log(sortDistance)
             for(var i=0;i<5;i++){
                 TopFive[i] = sortDistance[i]
             }
@@ -7612,8 +7784,12 @@ function KNNalgo(id){
                 for(var j=0;j<5;j++){
                     if(MDACCdata[i].Dummy_ID==TopFive[j].ID){
                         KNNPatientData.push({"Gender": MDACCdata[i].Gender, "T_category": MDACCdata[i].T_category, "N_category": MDACCdata[i].N_category, "HPV": MDACCdata[i].HPV, "Treatment": MDACCdata[i].Therapeutic,
-                        "OS": MDACCdata[i].OS, "Age": MDACCdata[i].Age_Diagnosis, "Cohort": "MDACC", "Race White": MDACCdata[i].Race_White, "Race Black": MDACCdata[i].Race_Black, "Race Hispanic": MDACCdata[i].Race_Hispanic, "Race Asian": MDACCdata[i].Race_Asian,
-                        "Race NOS": MDACCdata[i].Race_NOS, "HPV Positive": MDACCdata[i].HPV_Positive, "HPV Negative": MDACCdata[i].HPV_Negative, "HPV Unknown": MDACCdata[i].HPV_Unknown})
+                        "OS": MDACCdata[i].OS, "Age": MDACCdata[i].Age_Diagnosis, "Cohort": "MDACC", "Race_White": MDACCdata[i].Race_White, "Race_Black": MDACCdata[i].Race_Black, "Race_Hispanic": MDACCdata[i].Race_Hispanic, "Race_Asian": MDACCdata[i].Race_Asian,
+                        "Race_NOS": MDACCdata[i].Race_NOS, "HPV_Positive": MDACCdata[i].HPV_Positive, "HPV_Negative": MDACCdata[i].HPV_Negative, "HPV_Unknown": MDACCdata[i].HPV_Unknown,
+                        "CC": MDACCdata[i].CC, "Radiation_alone": MDACCdata[i].Radiation_alone, "IC_CC": MDACCdata[i].IC_CC, "IC_Radiation_alone": MDACCdata[i].IC_Radiation_alone,
+                        "Feeding_tube": MDACCdata[i].Feeding_tube})
+
+                        // console.log(MDACCdata[i].Radiation_alone)
                     }
                 }
             }
@@ -7674,7 +7850,8 @@ function KNNScatterplot(container, data){
 
       // don't want dots overlapping axis, so add in buffer to data domain
       // xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-      yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+      // yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+      yScale.domain([0, 170]);
 
         var tooltipScatterlot = d3.select("#tooltip_ClusteringScatterPlot")
             .attr("class", "tooltip")
@@ -7747,17 +7924,17 @@ function KNNScatterplot(container, data){
                 var HPV = "Unknown";
               }
 
-              if(d.feeding==1)
+              if(d.Feeding_tube==1 || d.Feeding_tube=="Y")
               {
-                var Feeding_tube = "Yes";
+                var Feeding_tube1 = "Yes";
               }
-              else if(d.feeding==0)
+              else if(d.Feeding_tube==0 || d.Feeding_tube=="N")
               {
-                var Feeding_tube = "No";
+                var Feeding_tube1 = "No";
               }
-              else if(d.feeding==100)
+              else if(d.Feeding_tube==100)
               {
-                var Feeding_tube = "Unknown";
+                var Feeding_tube1 = "Unknown";
               }
 
               if(d.Gender==1 || d.Gender== "Male")
@@ -7816,7 +7993,7 @@ function KNNScatterplot(container, data){
                             "N-category: N"  + d.N_category + "<br/>" +
                             "HPV: "  + HPV + "<br/>" +
                             "Treatment: "  + Therapeutic + "<br/>" +
-                            "Feeding Tube:"  + Feeding_tube + "<br/>")
+                            "Feeding Tube:"  + Feeding_tube1 + "<br/>")
                    .style("left", (d3.event.pageX + 5) + "px")
                    .style("top", (d3.event.pageY - 28) + "px");
           })

@@ -75,7 +75,7 @@
     grid-template-columns: 50% 5% 7% 6% 30%;
     grid-template-rows: 4% 14% 4% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 1% 4% 4% 7%;
     background-color: white;
-    box-shadow: -2px 0px 20px -5px #7a7a7a;
+    /*box-shadow: -2px 0px 20px -5px #7a7a7a;*/
     height: 100%;
 }
 
