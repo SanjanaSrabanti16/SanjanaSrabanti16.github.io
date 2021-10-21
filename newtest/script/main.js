@@ -2726,11 +2726,11 @@ function raceChart(cohort,container,value) {
         .rangeRound([0, width]);
 
     var color = d3.scale.ordinal()
-        .range(["#80b1d3","#8dd3c7", "#bebada", "#fb8072", "#b3de69", "#fdb462"]);
+        .range(["#80b1d3","#8dd3c7", "#bebada", "#fb8072", "#b3de69", "#fdb462", "#000000"]);
 
 
     var stack = d3.layout.stack();
-    var segmentsStacked = ['White', 'Black', 'American Indian', 'Hispanic', 'Asian', 'Others'];
+    var segmentsStacked = ['White', 'Black', 'American Indian', 'Hispanic', 'Asian', 'Others', 'Race_NAN'];
 
     d3.csv("data/demographicData.csv", function(race) {
 
@@ -2742,7 +2742,7 @@ function raceChart(cohort,container,value) {
 
             if((race[i]["cohort"]) == p){
                 var total = +(race[i]["White"]) + +(race[i]["Black"]) + +(race[i]["American Indian"]) + +(race[i]["Hispanic"]) +
-                 +(race[i]["Asian"]) + +(race[i]["Others"]);
+                 +(race[i]["Asian"]) + +(race[i]["Others"])+ +(race[i]["Race_NAN"]);
 
                 raceOriginalDataZipSelect = race[i];
                 race[i]["White"] = ((+(race[i]["White"])/total) *100).toFixed(2);
@@ -2751,6 +2751,7 @@ function raceChart(cohort,container,value) {
                 race[i]["Hispanic"] = ((+(race[i]["Hispanic"])/total) *100).toFixed(2);
                 race[i]["Asian"] = ((+(race[i]["Asian"])/total) *100).toFixed(2);
                 race[i]["Others"] = ((+(race[i]["Others"])/total) *100).toFixed(2);
+                race[i]["Race_NAN"] = ((+(race[i]["Race_NAN"])/total) *100).toFixed(2);
 
                 raceCount.push(race[i]);
             }
@@ -2775,7 +2776,7 @@ function raceChart(cohort,container,value) {
 
     if(p=='UIC')
     {
-    	xScale.domain([0, 100]).nice();
+    	xScale.domain([0, 96.5]);
     }
     else if(p=='MDACC')
     {
