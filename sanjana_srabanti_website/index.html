@@ -50,12 +50,17 @@ https://templatemo.com/tm-531-reflux
 		    }
 		});
 	</script> -->
-	
+
 	<script lang="javascript">
-    const reloadUsingLocationHash = () => {
-      window.location.hash = "reload";
-    }
-    window.onload = reloadUsingLocationHash();
+    window.onload = function() {
+   	if (!window.location.hash) {
+      window.location = window.location + '#loaded1';
+      setTimeout(function() {
+  		window.location.reload();
+	  }, 5000);
+      // window.location.reload();
+   	}
+	}
   </script>
     
   </head>
