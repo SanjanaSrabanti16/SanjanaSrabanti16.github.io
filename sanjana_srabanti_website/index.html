@@ -28,6 +28,28 @@ https://templatemo.com/tm-531-reflux
     <link rel="stylesheet" href="html/assets/css/lightbox.css" />
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- <script>
+    	window.onload = function() {
+			if(!window.location.hash) {
+					window.location = window.location + '#loaded';
+					window.location.reload();
+			}
+		}
+    </script> -->
+
+    <script type="text/javascript">
+		$(document).ready(function(){    
+		    //Check if the current URL contains '#'
+		    if(document.URL.indexOf("#")==-1){
+		        // Set the URL to whatever it was plus "#".
+		        url = document.URL+"#";
+		        location = "#";
+
+		        //Reload the page
+		        location.reload(true);
+		    }
+		});
+	</script>
     
   </head>
 
