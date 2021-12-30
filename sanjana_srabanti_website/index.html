@@ -37,7 +37,7 @@ https://templatemo.com/tm-531-reflux
 		}
     </script> -->
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 		$(document).ready(function(){    
 		    //Check if the current URL contains '#'
 		    if(document.URL.indexOf("#")==-1){
@@ -49,7 +49,14 @@ https://templatemo.com/tm-531-reflux
 		        location.reload(true);
 		    }
 		});
-	</script>
+	</script> -->
+	
+	<script lang="javascript">
+    const reloadUsingLocationHash = () => {
+      window.location.hash = "reload";
+    }
+    window.onload = reloadUsingLocationHash();
+  </script>
     
   </head>
 
