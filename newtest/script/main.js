@@ -2299,10 +2299,14 @@ function DemoMap(container,zip) {
         .call(xaxis);
 
     var color = d3.scale.ordinal()
-        .range(["#80b1d3","#8dd3c7", "#2e2e30"]);
+    //change for paper
+    		.range(["#8da0cb","#e78ac3", "#2e2e30"]);
+        // .range(["#80b1d3","#8dd3c7", "#2e2e30"]);
 
     var color1 = d3.scale.ordinal()
-        .range(["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#e5c494", "#000000"]);
+    //change for paper
+        .range(["#80b1d3", "#8dd3c7", "#bebada", "#fb8072", "#b3de69", "#fdb462", "#000000"]);
+        // .range(["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#e5c494", "#000000"]);
 
     var color2 = d3.scale.ordinal()
         .range(["#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fdbf6f", "#000000"]);
@@ -3089,7 +3093,7 @@ function genderChart(cohort,container,value) {
         .rangeRound([0, width]);
 
     var color = d3.scale.ordinal()
-        .range(["#8da0cb","#e78ac3", "#bebada"]);
+        .range(["#8da0cb","#e78ac3", "#2e2e30"]);
 
 
     var stack = d3.layout.stack();
@@ -5179,7 +5183,9 @@ function UICScatterPlot(container){
 
 // setup fill color
     var legendText = ["Male", "Female", "Dead"];
-    var LegendColor = ["#af8dc3", "#7fbf7b", "#FFFFFF"];
+    // var LegendColor = ["#af8dc3", "#7fbf7b", "#FFFFFF"];
+    //change for paper
+    var LegendColor = ["#8da0cb", "#e78ac3", "#FFFFFF"];
     var CohortText = ["UIC", "MDACC"];
     var Cohort2 = ["MDACC"]
     var Cohort1 = ["UIC"]
@@ -5258,11 +5264,15 @@ function UICScatterPlot(container){
                 if(d.Gender=="Male" || d.Gender==1)
                 {
                   //console.log(d.Cohort)
-                  return "#af8dc3";
+                  //return "#af8dc3";
+                  //change for paper
+                  return "#8da0cb";
                 }
                 else if(d.Gender=="Female" || d.Gender==2)
                 {
-                  return "#7fbf7b";
+                  // return "#7fbf7b";
+                  //change for paper
+                  return "#e78ac3";
                 }
           })
           .style("opacity", function(d){
