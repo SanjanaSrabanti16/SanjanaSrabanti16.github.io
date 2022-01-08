@@ -1067,7 +1067,41 @@ function UICCposition(){
                         //console.log("income is: "+incomePercent);
 
                         return color(incomePercent)
-                    });
+                    })
+                    .style("stroke", "#636363")
+		            .style('stroke-width', "1px")
+		            .on('mouseover', function(d){
+		                tooltip.transition()
+		                        .duration(200)
+		                        .style("opacity",0.9);
+		                tooltip.html("Zip: \n" + d.properties.zip + "<br>" + "Total Cancer People: " + d.properties.total + "<br>" + "Total Population: " + d.properties.totalPopulation + "<br>"
+		                            + "Male: " + d.properties.male + "<br>" + "Female: " + d.properties.female)  
+		                        .style("left", (d3.event.pageX) + "px")   
+		                        .style("top", (d3.event.pageY - 28) + "px");
+		            })
+		            .on("mouseout", function(d) {
+		                    tooltip.transition()
+		                        .duration(200)
+		                        .style("opacity", 0);
+
+		            })
+		            .on('click',function(d){
+
+		                d3.selectAll(".clicked1")
+		                                .classed("clicked1", false)
+		                                .style('stroke', '#636363')
+		                                .style('stroke-width', "1px");
+		                d3.select(this)
+		                  .classed("clicked1", true)
+		                  .style('stroke', '#b10026')
+		                  .style('stroke-width', "4px");
+		                  console.log(this)
+
+		                DemoMap("#DemoZip", d.properties.zip)
+		                rod_knot("#TNMStageC", d.properties.zip, "clinical")
+		                rod_knot("#TNMStageP", d.properties.zip, "pathological")
+
+		            })
 
 
                 d3.select("#sidebar-right2")
@@ -1233,8 +1267,39 @@ function IncomeRemove(){
                             
                         })
                         .style("stroke", "#636363")
-                        .style('stroke-width', "1px")
-                        .style("opacity", 1);
+			            .style('stroke-width', "1px")
+			            .on('mouseover', function(d){
+			                tooltip.transition()
+			                        .duration(200)
+			                        .style("opacity",0.9);
+			                tooltip.html("Zip: \n" + d.properties.zip + "<br>" + "Total Cancer People: " + d.properties.total + "<br>" + "Total Population: " + d.properties.totalPopulation + "<br>"
+			                            + "Male: " + d.properties.male + "<br>" + "Female: " + d.properties.female)  
+			                        .style("left", (d3.event.pageX) + "px")   
+			                        .style("top", (d3.event.pageY - 28) + "px");
+			            })
+			            .on("mouseout", function(d) {
+			                    tooltip.transition()
+			                        .duration(200)
+			                        .style("opacity", 0);
+
+			            })
+			            .on('click',function(d){
+
+			                d3.selectAll(".clicked1")
+			                                .classed("clicked1", false)
+			                                .style('stroke', '#636363')
+			                                .style('stroke-width', "1px");
+			                d3.select(this)
+			                  .classed("clicked1", true)
+			                  .style('stroke', '#b10026')
+			                  .style('stroke-width', "4px");
+			                  console.log(this)
+
+			                DemoMap("#DemoZip", d.properties.zip)
+			                rod_knot("#TNMStageC", d.properties.zip, "clinical")
+			                rod_knot("#TNMStageP", d.properties.zip, "pathological")
+
+			            })
 
 
                 var w = 120, h= 120;
@@ -1405,21 +1470,40 @@ function EducationRemove(){
                             if(educatedPeopleRate>90 && incomePeople>80000){return "#2a5a5b"};
                             
                         })
-                        .style("opacity", 1)
-                        .on('mouseover', function(d){
-                            tooltip.transition()
-                                   .duration(200)
-                                   .style("opacity",0.9);
-                            tooltip.html("Zip: \n" + d.properties.zip + "<br>" + "Total Cancer People: " + d.properties.total + "<br>" + "Total Population: " + d.properties.totalPopulation + "<br>"
-                                        + "Male: " + d.properties.male + "<br>" + "Female: " + d.properties.female)  
-                                    .style("left", (d3.event.pageX) + "px")   
-                                    .style("top", (d3.event.pageY - 28) + "px");
-                        })
-                        .on('mouseout', function(d){
-                            tooltip.transition()
-                                   .duration(200)
-                                   .style("opacity",0);
-                        })
+                        .style("stroke", "#636363")
+			            .style('stroke-width', "1px")
+			            .on('mouseover', function(d){
+			                tooltip.transition()
+			                        .duration(200)
+			                        .style("opacity",0.9);
+			                tooltip.html("Zip: \n" + d.properties.zip + "<br>" + "Total Cancer People: " + d.properties.total + "<br>" + "Total Population: " + d.properties.totalPopulation + "<br>"
+			                            + "Male: " + d.properties.male + "<br>" + "Female: " + d.properties.female)  
+			                        .style("left", (d3.event.pageX) + "px")   
+			                        .style("top", (d3.event.pageY - 28) + "px");
+			            })
+			            .on("mouseout", function(d) {
+			                    tooltip.transition()
+			                        .duration(200)
+			                        .style("opacity", 0);
+
+			            })
+			            .on('click',function(d){
+
+			                d3.selectAll(".clicked1")
+			                                .classed("clicked1", false)
+			                                .style('stroke', '#636363')
+			                                .style('stroke-width', "1px");
+			                d3.select(this)
+			                  .classed("clicked1", true)
+			                  .style('stroke', '#b10026')
+			                  .style('stroke-width', "4px");
+			                  console.log(this)
+
+			                DemoMap("#DemoZip", d.properties.zip)
+			                rod_knot("#TNMStageC", d.properties.zip, "clinical")
+			                rod_knot("#TNMStageP", d.properties.zip, "pathological")
+
+			            })
 
                 var EIcolors = ["#e8e8e8", "#b5c0da", "#6c83b5","#b8d6be", "#90b2b3", "#567994","#73ae80", "#5a9178", "#2a5a5b"]
 
@@ -1628,7 +1712,7 @@ function EduIncomeRemove(){
                         .enter().append('path')
                         .attr('d', path)
                         .attr('class', 'smoke-path')
-                        .transition()
+                        // .transition()
 
                         .attr("transform", function (d) {
 
@@ -1653,7 +1737,40 @@ function EduIncomeRemove(){
                             
                             
                         })
-                        .style("opacity", 1);
+                        .style("stroke", "#636363")
+			            .style('stroke-width', "1px")
+			            .on('mouseover', function(d){
+			                tooltip.transition()
+			                        .duration(200)
+			                        .style("opacity",0.9);
+			                tooltip.html("Zip: \n" + d.properties.zip + "<br>" + "Total Cancer People: " + d.properties.total + "<br>" + "Total Population: " + d.properties.totalPopulation + "<br>"
+			                            + "Male: " + d.properties.male + "<br>" + "Female: " + d.properties.female)  
+			                        .style("left", (d3.event.pageX) + "px")   
+			                        .style("top", (d3.event.pageY - 28) + "px");
+			            })
+			            .on("mouseout", function(d) {
+			                    tooltip.transition()
+			                        .duration(200)
+			                        .style("opacity", 0);
+
+			            })
+			            .on('click',function(d){
+
+			                d3.selectAll(".clicked1")
+			                                .classed("clicked1", false)
+			                                .style('stroke', '#636363')
+			                                .style('stroke-width', "1px");
+			                d3.select(this)
+			                  .classed("clicked1", true)
+			                  .style('stroke', '#b10026')
+			                  .style('stroke-width', "4px");
+			                  console.log(this)
+
+			                DemoMap("#DemoZip", d.properties.zip)
+			                rod_knot("#TNMStageC", d.properties.zip, "clinical")
+			                rod_knot("#TNMStageP", d.properties.zip, "pathological")
+
+			            });
 
                     d3.select("#sidebar-right1")
                         .append('svg')
@@ -5188,7 +5305,7 @@ function UICScatterPlot(container){
     var LegendColor = ["#8da0cb", "#e78ac3", "#FFFFFF"];
     var CohortText = ["UIC", "MDACC"];
     var Cohort2 = ["MDACC"]
-    var Cohort1 = ["UIC"]
+    var Cohort1 = ["UI"]
     var TcatText = ["T1", "T2", "T3", "T4"];
     var NcatText = ["N1", "N2", "N3", "N4"];
 
@@ -7114,8 +7231,8 @@ function rod_knot(container, zipcode, stage){
                     .attr("transform", "translate(0,105)");
 
         if(stage=="clinical"){
-            if(zipcode=="ALL"){text = "UIC Clinical Staging (All Zipcodes)"}
-                else{text = "UIC Clinical Staging " + '( Zipcode: ' + zipcode + ')'}
+            if(zipcode=="ALL"){text = "UI Clinical Staging (All Zipcodes)"}
+                else{text = "UI Clinical Staging " + '( Zipcode: ' + zipcode + ')'}
             d3.select("#TNMHeadingCUIC")
                         .append('svg')
                         .attr("width",$("#TNMHeadingCUIC").width())
@@ -7130,8 +7247,8 @@ function rod_knot(container, zipcode, stage){
                         .text(text);
         }
         if(stage=="pathological"){
-            if(zipcode=="ALL"){text = "UIC Pathological Staging (All Zipcodes)"}
-                else{text = "UIC Pathological Staging " + '( Zipcode: ' + zipcode + ')'}
+            if(zipcode=="ALL"){text = "UI Pathological Staging (All Zipcodes)"}
+                else{text = "UI Pathological Staging " + '( Zipcode: ' + zipcode + ')'}
             d3.select("#TNMHeadingPUIC")
                         .append('svg')
                         .attr("width",$("#TNMHeadingPUIC").width())
@@ -7383,7 +7500,7 @@ function KNNButton(){
                 .enter().append("option")
                 .attr("value", function (d) {return d; })
                 .text(function (d) {
-                    return "UIC Patient " +d;
+                    return "UI Patient " +d;
                 });
         })
         //UIC Dropdown ends
@@ -7838,9 +7955,9 @@ function KNNScatterplot(container, data){
 // setup fill color
     var legendText = ["Male", "Female", "Dead"];
     var LegendColor = ["#af8dc3", "#7fbf7b", "#FFFFFF"];
-    var CohortText = ["UIC", "MDACC"];
+    var CohortText = ["UI", "MDACC"];
     var Cohort2 = ["MDACC"]
-    var Cohort1 = ["UIC"]
+    var Cohort1 = ["UI"]
     var TcatText = ["T1", "T2", "T3", "T4"];
     var NcatText = ["N1", "N2", "N3", "N4"];
 
