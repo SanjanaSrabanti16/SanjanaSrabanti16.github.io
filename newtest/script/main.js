@@ -5288,7 +5288,7 @@ function UICScatterPlot(container){
     height = $(container).height() - margin.top - margin.bottom;
 
    var xValue = function(d) { return d.age_diagnosed;}, // data -> value
-    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xScale = d3.scale.linear().range([0, width-5]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
@@ -5315,11 +5315,11 @@ function UICScatterPlot(container){
         .attr("height", $(container).height())
         .attr("class", "ClusteringScatterPlot")
         .append("g")
-        .attr("transform", "translate(30,5)");
+        .attr("transform", "translate(35,5)");
 
 
 
-    d3.csv("data/UICandMDACC.csv", function(data) {
+    d3.csv("data/UICandnewMDACC.csv", function(data) {
     //console.log(data)
 
   // change string (from CSV) into number format
@@ -5350,7 +5350,7 @@ function UICScatterPlot(container){
           .text("Age at Diagnosis (years)");
 
       // y-axis
-      axis = width-795;
+      axis = width-795;//795
       var y_axis = UICScatterPlot.append("g")
           .attr("class", "y axis")
           
