@@ -53,6 +53,13 @@ h4 {
     letter-spacing: 0.25px;
 }
 
+h6 {
+    font-size: 50px;
+    font-weight: 700;
+    color: 'yellow';
+    letter-spacing: 0.25px;
+}
+
 img {
     width: 100%;
     overflow: hidden;
