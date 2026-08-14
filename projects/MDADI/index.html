@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>StreetWeave | You R. Name</title>
+  <title>MDADI | S. Srabanti</title>
   <meta name="author" content="You R. Name">
   <meta name="description" content="with background image">
   <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
@@ -33,7 +33,7 @@
   >
   <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
   <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
-  <link rel="canonical" href="https://sanjanasrabanti16.github.io/projects/StreetWeave/">
+  <link rel="canonical" href="https://sanjanasrabanti16.github.io/projects/MDADI/">
 
   <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script>
   <link
@@ -104,15 +104,12 @@
   <div class="container mt-5" role="main">
     <div class="post">
       <header class="post-header">
-        <h1 class="post-title">StreetWeave
+        <h1 class="post-title">MDADI Machine Learning Models
         </h1>
-        <p class="post-description">A Declarative Grammar for the Visualization of
-          Multivariate Data for Spatial Networks</p>
+        <p class="post-description">Dysphagia Risk Stratification in Head and Neck
+Cancer via Two-Stage PRO-Clinical Stacking</p>
           <p>
-          Tools used: React, TypeScript, JavaScript, D3.js, Vega-Lite, Leaflet.js, HTML, CSS, Python, Pandas.
-        </p>
-        <p>
-          <span>You can visit StreetWeave here: <a href="https://urbantk.org/streetweave/">https://urbantk.org/streetweave/</a> </span>
+          Tools used: Python, XGBoost, scikit-learn, pandas, NumPy, SciPy, SHAP, Matplotlib, Jupyter Notebook, joblib
         </p>
       </header>
 
@@ -208,15 +205,15 @@
         </div> -->
 
         <div class="row">
-          <div class="col-sm mt-3 mt-md-0">
-            <figure>
+          <div class="col-sm mt-3 mt-md-0 text-center">
+            <figure class="d-inline-block">
               <picture>
                 <img
-                  src="/assets/img/project/TeaserMain.jpg"
+                  src="/assets/img/project/MDADI.png"
                   class="img-fluid rounded z-depth-1"
-                  width="100%"
-                  height="auto"
-                  title="example image"
+                  width="364"
+                  height="303"
+                  title="Overview of the proposed two-stage PRO-clinical framework for swallowing impairment prediction"
                   loading="eager"
                   onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
                 >
@@ -227,40 +224,46 @@
 
         <div class="caption", align="justify">
           <b>Figure: </b>
-          Different street and pedestrian network visualizations generated with <b>StreetWeave</b>. (A) A multivariate line map, where different
-          attributes, such as color and line width, effectively encode various data dimensions. (B) & (C) A pattern-based encoding approach for
-          street overlays, utilizing dashed lines, variable opacities, and wave patterns to represent specific data attributes. (D) & (E) A bristle map
-          and a line map that communicate data through variations in width, height, color, and opacity, with an additional alignment dimension
-          integrating multiple encodings. (F) A multi-dimensional grid, where each cell decodes a distinct data value and the background map
-          color can be customized. (G) & (H) Visual encodings applied directly to street intersections and segments, with an orientation dimension
-          that allows for dynamic adjustments in plot direction.
+          Overview of the proposed two-stage PRO-clinical framework for swallowing impairment prediction.
         </div>
 
         <p>
           <code class="language-plaintext highlighter-rouge">Abstract</code>
         </p>
         <p align="justify">
-          The visualization and analysis of street and pedestrian networks are important to various domain experts, including urban
-          planners, climate researchers, and health experts. This has led to the development of new techniques for street and pedestrian
-          network visualization, expanding possibilities for effective data presentation and interpretation. Despite their increasing adoption,
-          there is no established design framework to guide the creation of these visualizations while addressing the diverse requirements of
-          various domains. When exploring a feature of interest, domain experts often need to transform, integrate, and visualize a combination
-          of thematic data (e.g., demographic, socioeconomic, pollution) and physical data (e.g., zip codes, street networks), often spanning
-          multiple spatial and temporal scales. This not only complicates the process of visual data exploration and system implementation for
-          developers but also creates significant entry barriers for experts who lack a background in programming. With this in mind, in this paper,
-          we reviewed 45 studies utilizing street-overlaid visualizations to understand how they are applied in practice. Through qualitative coding
-          of these visualizations, we analyzed three key aspects of street and pedestrian network visualization usage: their analytical purposes,
-          the visualization approaches employed, and the data sources used in their creation. Building on this design space, we introduce
-          StreetWeave, a declarative grammar for designing custom visualizations of multivariate spatial network data across multiple resolutions.
-          We demonstrate how StreetWeave can be used to create various street-overlaid visualizations, enabling effective exploration and
-          analysis of spatial data.
+          Dysphagia is a debilitating late effect of head and
+          neck cancer (HNC) treatment, yet timely identification of atrisk patients remains challenging in survivorship care. Definitive
+          assessment relies on videofluoroscopic imaging, as captured by
+          the Dynamic Imaging Grade of Swallowing Toxicity (CTCAEDIGEST), which, while validated, requires specialized equipment,
+          trained personnel, and significant patient burden, limiting its
+          routine use in surveillance. Patient-reported outcomes (PROs), by
+          contrast, are low-cost, scalable, and easily collected at any clinical
+          encounter, making them an attractive alternative signal for identifying patients who may warrant further evaluation. However,
+          a clear clinical framework for translating PRO responses into
+          actionable interventions is still evolving. In particular, uncertainty remains regarding when a patient’s self-reported symptom
+          burden should prompt escalation of care.
+          This study addresses this gap by formulating a single-visit
+          PRO-clinical prediction framework and introducing a clinically
+          interpretable two-stage stacking model to predict swallowing impairment risk using PRO responses and structured clinical variables, without requiring videofluoroscopic imaging. The proposed
+          framework quantifies the independent contributions of patientreported symptoms and clinical factors within a unified and
+          interpretable risk assessment model. Our findings demonstrate
+          that individual MDADI responses contain predictive information
+          beyond that captured by composite or global summary scores,
+          while interpretability analyses reveal symptom patterns and
+          clinical risk factors associated with swallowing impairment.
+          Together, these results support the use of structured PRO-clinical
+          integration as a practical, imaging-free approach for dysphagia
+          risk stratification in HNC survivorship.
+
         </p>
+
+        <p align="justify">The original MDADI–DIGEST study predicted binary swallowing impairment by grouping DIGEST Grades 0–1 as negative and Grades 2–4 as positive. Its proposed two-stage model first used XGBoost to learn nonlinear patterns from the 20 individual MDADI responses and then passed the cross-fitted PRO risk log-odds, together with clinical variables, into an ElasticNet logistic regression. Across 50 patient-grouped evaluations, this model outperformed the clinical-only, composite-score, single-item, PRO-only, and direct PRO–clinical XGBoost and ElasticNet baselines, achieving an accuracy of 0.846, weighted F1 of 0.845, AUC of 0.885, balanced accuracy of 0.783, and recall of 0.662. We are now extending this binary system to predict four ordered DIGEST severity classes: Grade 0, Grade 1, Grade 2, and Grades 3–4 combined. The new study compares multinomial ElasticNet, nominal multiclass XGBoost, cumulative ordinal XGBoost, and cumulative XGBoost–ElasticNet stacks using all or selected clinical variables. In 50 patient-grouped development evaluations, the PRO-only cumulative ordinal XGBoost model currently performed best overall, obtaining a quadratic weighted kappa of 0.600 and mean absolute grade error of 0.637 with the prespecified posterior-median rule; rounded expected-value predictions achieved a secondary development kappa of 0.627 and error of 0.590. Because binary and four-class ordinal prediction are different tasks, their performance values are not directly comparable, and the next objective is independent patient-level validation of the new ordinal model.</p>
 
 
         
       </article>
 
-      <h2>References</h2>
+      <!-- <h2>References</h2>
       <div class="publications">
         <h2 class="bibliography">2025</h2>
         <ol class="bibliography">
@@ -333,7 +336,7 @@
         </ol>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <footer class="fixed-bottom" role="contentinfo">
     <div class="container mt-0">
